@@ -2,15 +2,20 @@
 
 **[bitcoinwhitepaper.online](https://bitcoinwhitepaper.online)**
 
-There is not one Bitcoin whitepaper. There are at least three, they differ in ways anyone can check
-in seconds, and **one of them is lost**. This repository records what each version is, how to
-identify any copy from its contents alone, and exactly where proof ends and inference begins.
+There is not one Bitcoin whitepaper. **At least four are known**, they differ in ways anyone can
+check in seconds, and only two survive in public hands. This repository records what each version is,
+how to identify any copy from its contents alone, and exactly where proof ends and inference begins.
 
 | version | status | sha256 |
 |---|---|---|
 | **August 2008** — *Electronic Cash Without a Trusted Third Party* | **lost** | unknown; its link was never archived |
 | **3 October 2008** | held | `427c63b364c6db914cf23072a09ffd53ee078397b7c6ab2d604e12865a982faa` |
+| **11 November 2008** | **not held** | a control copy in COPA v Wright (Rosendahl Exhibit AR3); contents not public |
 | **24 March 2009** — canonical | held, chain-anchored | `b1674191a88ec5cdd733e4240a81803105dc412d6c6708d53ab94fc248f4f553` |
+
+The **11 November 2008** version is dated two days after Satoshi proposed transaction fees on the
+mailing list. Whether it carries the Section 6 fee paragraph would date that addition to within 48
+hours. The exhibit is not public.
 
 ---
 
@@ -62,6 +67,23 @@ different glyphs because the body text changed.
 
 *`pdf_text.py` exists because the file uses per-font `ToUnicode` CMaps: merge them, as the obvious
 implementation does, and the output is a substitution cipher — `"purely"` decodes as `"ranTBl"`.*
+
+## The canonical file's creation time is confirmed by a server
+
+The Internet Archive replays the **origin server's** headers when a capture is fetched with `id_`:
+
+```
+bitcoin.org/bitcoin.pdf, captured 2010-07-04
+  X-Archive-Orig-Last-Modified:  Tue, 24 Mar 2009 17:33:15 GMT
+  X-Archive-Orig-Content-Length: 184292
+
+the PDF's own /CreationDate  D:20090324113315-06'00' = 2009-03-24 17:33:15 UTC   <- identical
+SourceForge mirrors (x3)                               2009-03-24 17:50:18 GMT   <- +17 minutes
+```
+
+`Last-Modified` on a static file is its **mtime on the serving host's filesystem** — written by
+bitcoin.org's web server, not by the author. A self-asserted creation date, confirmed to the second
+by a server the author did not run. Run `verify/wayback_orig_headers.py`.
 
 ## How the October draft is dated without trusting the file
 
