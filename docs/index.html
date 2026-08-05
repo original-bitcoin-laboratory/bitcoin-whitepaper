@@ -315,7 +315,7 @@ before   9 Nov 2008                                 — lacks a paragraph he had
       ago and <b>do not have copies</b>; Hal Finney was asked and died in August 2014.</li>
     <li><b>The December 2008 SourceForge file.</b> Replaced on 2009-03-24. Its size was never captured
       — there is a Wayback gap for that project from January to September 2009, and the file-detail
-      page is the only page carrying a size. <b>Not recoverable by machine.</b></li>
+      page is the only page carrying a size. <b>Not recoverable by machine</b> — and it was downloaded <b>once</b>, see below.</li>
     <li><b>The cypherpunks cross-post.</b> The announcement was forwarded to
       <span class="mono">cypherpunks@al-qaeda.net</span> on 1 Nov 2008. That node ran 2005–2013
       <b>without public archives</b>; the surviving cypherpunks archives cover the 1990s and 2013
@@ -324,6 +324,36 @@ before   9 Nov 2008                                 — lacks a paragraph he had
       the judgment but are <b>not published</b>. The judgment quotes them extensively; that is what
       exists publicly.</li>
   </ul>
+</section>
+
+<section>
+  <h2>How many people downloaded it</h2>
+  <p class="lead">SourceForge still publishes its own download statistics, month by month, back to
+    the project's registration. No key, no login.</p>
+<pre>https://sourceforge.net/projects/bitcoin/files/stats/json?start_date=2008-11-09&amp;end_date=2009-06-30
+
+   2008-11         0
+   2008-12         <b>1</b>     &lt;- the whitepaper was the ONLY file in the project that month
+   2009-01       141     &lt;- v0.1 released 8 Jan 2009
+   2009-02        49
+   2009-03        59</pre>
+  <p class="sm">Satoshi uploaded the paper to SourceForge on <b>8/9 December 2008</b> and the software
+    on <b>8 January 2009</b> (COPA v Wright, agreed chronology ¶23.5 and ¶23.7). So in December 2008
+    the project held exactly one file — and <b>it was downloaded once</b>.</p>
+  <p class="sm">Checked across four independent query windows; all return 1, and an isolated December
+    query returns <span class="mono">total: 1</span>. Reproduce with
+    <span class="mono">verify/sourceforge_download_stats.py</span>.</p>
+  <div class="card">
+    <h3>What this figure is not</h3>
+    <p class="sm">It is a <b>project</b> total, not a per-file one — the API exposes no per-file
+      breakdown for that period, and the step to “the whitepaper” comes from the chronology, not from
+      the API. Whether an uploader's own fetch is counted is undocumented, as is how bots were
+      filtered in 2008. Counts are monthly buckets.</p>
+    <p class="sm">With those caveats: <b>the SourceForge copy reached approximately one party before
+      it was replaced.</b> That is worth knowing precisely because it is the opposite of what one
+      would assume — and because it means “ask the people who downloaded it from SourceForge” is not
+      a search strategy.</p>
+  </div>
 </section>
 
 <section>
