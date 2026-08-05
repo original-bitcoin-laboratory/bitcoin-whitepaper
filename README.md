@@ -113,7 +113,6 @@ Recorded so nobody repeats them:
 - **[satoshioncha.in](https://satoshioncha.in)** — Satoshi On-Chain: the verifiable on-chain and
   off-chain footprint of the original Satoshi.
 
-Three domains, three remits: that one gets to the bottom of *Bitcoin*, that one of *Satoshi*, this
-one of *the document*.
+Three domains, three remits: **the code**, **the identity**, **the document**.
 
 MIT © 2026 [parthod0x](https://github.com/parthod0x) · not money, not financial advice · no warranty
