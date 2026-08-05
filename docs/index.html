@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Bitcoin Whitepaper — which version is which, and how to check</title>
+<meta name="description" content="Three versions of the Bitcoin whitepaper: one lost, two held. How to identify any copy from its contents alone, how to verify the canonical file against the block chain, and what was searched and is not there.">
+<style>
+  :root{
+    --bg:#fbfaf7; --panel:#ffffff; --ink:#191713; --muted:#5c574e; --faint:#8d867a;
+    --line:#e6e1d7; --line-2:#d3ccbe; --accent:#8a5a2b; --accent-soft:rgba(138,90,43,.07);
+    --good:#2f6b45; --warn:#9a5b12; --gone:#8d867a;
+    --mono:ui-monospace,"SF Mono","Cascadia Code","JetBrains Mono",Menlo,Consolas,monospace;
+    --serif:Charter,"Bitstream Charter","Iowan Old Style",Georgia,serif;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --bg:#14130f; --panel:#1c1a16; --ink:#ece7dd; --muted:#a89f90; --faint:#7d7466;
+    --line:#2b2820; --line-2:#3b372c; --accent:#c79a55; --accent-soft:rgba(199,154,85,.10);
+    --good:#6bb389; --warn:#d9a45f; --gone:#7d7466; }}
+  :root[data-theme="light"]{
+    --bg:#fbfaf7; --panel:#ffffff; --ink:#191713; --muted:#5c574e; --faint:#8d867a;
+    --line:#e6e1d7; --line-2:#d3ccbe; --accent:#8a5a2b; --good:#2f6b45; --warn:#9a5b12; --gone:#8d867a;}
+  :root[data-theme="dark"]{
+    --bg:#14130f; --panel:#1c1a16; --ink:#ece7dd; --muted:#a89f90; --faint:#7d7466;
+    --line:#2b2820; --line-2:#3b372c; --accent:#c79a55; --good:#6bb389; --warn:#d9a45f; --gone:#7d7466;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:860px;margin:0 auto;padding:clamp(30px,6vw,76px) clamp(18px,5vw,34px) 90px}
+  .mono{font-family:var(--mono);font-size:.92em}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.15em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 16px}
+  h1{font-family:var(--serif);font-size:clamp(31px,5.6vw,50px);line-height:1.06;letter-spacing:-.02em;
+    font-weight:600;margin:0 0 18px;text-wrap:balance}
+  .thesis{font-size:clamp(16px,2.1vw,18.5px);color:var(--muted);margin:0 0 12px;max-width:62ch}
+  .thesis b{color:var(--ink);font-weight:600}
+  h2{font-family:var(--serif);font-size:clamp(21px,3vw,27px);font-weight:600;letter-spacing:-.01em;
+    margin:56px 0 6px;padding-top:22px;border-top:1px solid var(--line)}
+  h3{font-size:15.5px;font-weight:650;margin:26px 0 6px;color:var(--ink)}
+  p{margin:0 0 13px;max-width:70ch}
+  .lead{color:var(--muted);margin-bottom:20px;max-width:66ch}
+  .sm{font-size:14px;color:var(--muted);max-width:70ch}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--line-2)}
+  a:hover{border-color:var(--accent)}
+  code{font-family:var(--mono);font-size:.88em;background:var(--accent-soft);padding:1px 5px;
+    border-radius:4px;overflow-wrap:anywhere}
+  pre{font-family:var(--mono);font-size:12.5px;line-height:1.65;background:var(--panel);
+    border:1px solid var(--line);border-radius:9px;padding:15px 17px;overflow-x:auto;margin:14px 0;
+    color:var(--muted)}
+  pre b{color:var(--ink);font-weight:600}
+  .tw{overflow-x:auto;margin:16px 0;border:1px solid var(--line);border-radius:9px;background:var(--panel)}
+  table{border-collapse:collapse;width:100%;font-size:14px;min-width:600px}
+  th,td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--faint);font-weight:600;white-space:nowrap}
+  tr:last-child td{border-bottom:0}
+  td b{color:var(--ink)}
+  .v-gone{color:var(--gone)} .v-held{color:var(--good);font-weight:600}
+  .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;
+    padding:2px 7px;border-radius:4px;border:1px solid var(--line-2);white-space:nowrap}
+  .t-gone{color:var(--gone)} .t-held{color:var(--good);border-color:var(--good)}
+  .t-chain{color:var(--accent);border-color:var(--accent)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:11px;
+    padding:18px 20px;margin:18px 0}
+  .card h3{margin-top:0}
+  .quote{border-left:2px solid var(--accent);padding:3px 0 3px 18px;margin:16px 0;
+    font-family:var(--serif);font-size:16px;color:var(--muted);max-width:64ch}
+  .quote cite{display:block;margin-top:8px;font-family:var(--mono);font-size:11.5px;
+    font-style:normal;color:var(--faint)}
+  .neg{color:var(--gone)}
+  ul{margin:0 0 13px;padding-left:20px;max-width:70ch} li{margin-bottom:6px}
+  footer{margin-top:74px;padding-top:24px;border-top:1px solid var(--line);
+    font-family:var(--mono);font-size:12.5px;line-height:1.85;color:var(--faint)}
+  footer a{color:var(--faint);border-bottom:1px solid var(--line)}
+  footer a:hover{color:var(--ink);border-color:var(--accent)}
+  footer .k{color:var(--muted)}
+  footer p{margin:3px 0}
+  .fbrand{letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-size:11px;margin-bottom:10px}
+  .flegal{margin-top:13px;padding-top:13px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+<header>
+  <p class="eyebrow">Document provenance · reproducible · neutral</p>
+  <h1>The Bitcoin whitepaper: which version is which</h1>
+  <p class="thesis">There is not one Bitcoin whitepaper. There are at least three, and they differ in
+    ways you can check yourself in seconds. <b>One is lost. Two survive.</b> This page records what
+    each one is, how to identify any copy from its contents alone, and — the part that matters most —
+    <b>exactly where proof ends and inference begins</b>.</p>
+  <p class="thesis">Every claim here links to a public source. Nothing asks you to trust us.</p>
+</header>
+
+<section>
+  <h2>The three versions</h2>
+  <p class="lead">Dates are the files' own; the evidence for them is below and does not depend on them.</p>
+  <div class="tw"><table>
+    <tr><th>version</th><th>status</th><th>identity</th></tr>
+    <tr>
+      <td><b>August 2008</b><br><span class="sm">“Electronic Cash Without a&nbsp;Trusted Third Party”</span></td>
+      <td><span class="tag t-gone">lost</span></td>
+      <td class="v-gone">Sent as a link to Adam Back on 20 Aug 2008 and Wei Dai on 22 Aug 2008.
+        The filehost died; no archive ever captured it. <b>Its contents are known from Satoshi's own
+        emails</b> — see the ladder below.</td>
+    </tr>
+    <tr>
+      <td><b>3 October 2008</b><br><span class="mono sm">183,697 bytes<br>427c63b3…982faa</span></td>
+      <td><span class="tag t-held">held</span></td>
+      <td>The paper as announced. Its abstract matches the 31 October announcement
+        <b>word for word</b>. Served byte-identically by
+        <a href="https://gwern.net/doc/bitcoin/20081003-nakamoto-bitcoindraft.pdf">gwern.net</a> and
+        <a href="https://archive.org/details/bitcoin-a-peer-to-peer-electronic-cash-system">archive.org</a>.
+        Used as a <b>forensic control copy in the High&nbsp;Court</b>.</td>
+    </tr>
+    <tr>
+      <td><b>24 March 2009</b><br><span class="mono sm">184,292 bytes<br>b1674191…f4f553</span></td>
+      <td><span class="tag t-chain">held · chain-anchored</span></td>
+      <td>The canonical file — what <span class="mono">bitcoin.org/bitcoin.pdf</span> serves today.
+        <b>Embedded in the block chain</b> at block 230009. This is the design as its author last
+        stated it; it is <b>not</b> a witness to October 2008.</td>
+    </tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>Identify any copy in ten seconds</h2>
+  <p class="lead">Six tests, all plain text searches. <b>Four of them come from Satoshi's own words in
+    dated records</b> rather than from any file — which is why they can identify even the version
+    nobody has.</p>
+  <div class="tw"><table>
+    <tr><th>test</th><th>Aug 2008 (lost)</th><th>3 Oct 2008</th><th>24 Mar 2009</th></tr>
+    <tr><td><b>title</b></td><td class="v-gone">Electronic Cash Without a Trusted Third Party</td><td>Bitcoin: A Peer-to-Peer…</td><td>Bitcoin: A Peer-to-Peer…</td></tr>
+    <tr><td><b>“Digital signatures …”</b></td><td class="v-gone"><b>offer</b> part of the solution</td><td><b>provide</b> part</td><td><b>provide</b> part</td></tr>
+    <tr><td><b>Hashcash reference no.</b></td><td class="v-gone"><b>[5]</b></td><td>[6]</td><td>[6]</td></tr>
+    <tr><td><b>b-money citation</b></td><td class="v-gone"><b>absent entirely</b></td><td>[1] … 1998</td><td>[1] … 1998</td></tr>
+    <tr><td>“the burdens of”</td><td class="v-gone">yes</td><td>yes</td><td>no</td></tr>
+    <tr><td><b>Section 6 transaction fees</b></td><td class="v-gone">absent</td><td><b>absent</b></td><td>present</td></tr>
+    <tr><td>contact address</td><td class="v-gone">—</td><td class="mono">satoshi@vistomail.com</td><td class="mono">satoshin@gmx.com</td></tr>
+  </table></div>
+
+  <div class="card">
+    <h3>Where the reference numbers come from</h3>
+    <p class="sm">On <b>20 August 2008</b> Satoshi emailed Adam Back to check a citation, quoting his
+      own draft: <code>[5] A. Back, "Hashcash — a denial of service counter-measure"</code>. He had
+      never heard of b-money. Back replied the next day pointing him to it, and Satoshi answered:
+      <i>“I wasn't aware of the b-money page… I'll e-mail him to confirm the year of publication so I
+      can credit him.”</i></p>
+    <p class="sm">If b-money then went in as <code>[1]</code>, every later reference must shift down
+      by one. <b>Both surviving files were checked: Hashcash is <code>[6]</code> in both.</b> A
+      prediction taken from a court exhibit, confirmed against files from an unrelated source.</p>
+    <p class="sm">So a candidate for the lost August draft is settled instantly: <b>title
+      “Electronic Cash Without a Trusted Third Party”, Hashcash at <code>[5]</code>, no b-money.</b>
+      The file circulating under that name fails this — and also fails on structure, being PDF 1.6 and
+      linearized, which OpenOffice 2.4 does not produce.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Verify it yourself</h2>
+  <p class="lead">Python 3, standard library. No API key, no login, no node required.</p>
+
+  <h3>1 · Carve the canonical paper out of the block chain</h3>
+  <p class="sm">It was embedded in mainnet transaction
+    <a href="https://blockstream.info/tx/54e48e5f5c656b26c3bca14a8c95aa583d07ebe84dde3b7dd4a78f4e4186e713"><span class="mono">54e48e5f…</span></a>
+    across 945 bare-multisig outputs whose “public keys” are file bytes.</p>
+<pre>python verify/whitepaper_from_chain.py out.pdf
+
+block   230009        2013-04-06 20:28:10 UTC
+carved  184,292 bytes  %PDF-1.4 … %%EOF
+sha256  <b>b1674191a88ec5cdd733e4240a81803105dc412d6c6708d53ab94fc248f4f553</b>   matches</pre>
+  <p class="sm"><b>Proof-of-work cannot be backdated.</b> This pins the canonical text to April 2013
+    independently of bitcoin.org, of the Internet Archive, and of us. It says <b>nothing</b> about
+    2008 and is not offered as if it did.</p>
+
+  <h3>2 · Compare the two surviving files structurally</h3>
+<pre>python verify/pdf_structure.py canonical.pdf draft.pdf
+
+                        canonical      draft
+PDF version              %PDF-1.4    %PDF-1.4
+linearized                     no          no
+/ObjStm  (PDF 1.5+)             0           0
+/XRef    (PDF 1.5+)             0           0
+/ID[0] == /ID[1]     never re-saved  never re-saved
+embedded subset fonts           7           7
+pages                           9           <b>8</b></pre>
+
+  <h3>3 · Compare the embedded font programs — the deepest test</h3>
+  <p class="sm">OpenOffice embeds a <i>subset</i> of each font containing only the glyphs the document
+    uses. Two exports of the same document from the same machine share byte-identical subsets wherever
+    the text did not change.</p>
+<pre>python verify/pdf_fonts.py canonical.pdf draft.pdf
+
+BAAAAA+CenturySchoolbook-Bold     29,212   29,212   <b>IDENTICAL</b>
+CAAAAA+TimesNewRomanPSMT          60,572   60,572   differ
+DAAAAA+TimesNewRomanPS-BoldMT     25,632   25,632   <b>IDENTICAL</b>
+EAAAAA+ArialMT                    38,580   38,580   <b>IDENTICAL</b>
+FAAAAA+TimesNewRomanPS-ItalicMT   37,812   37,812   <b>IDENTICAL</b>
+GAAAAA+OpenSymbol                  2,232    2,232   <b>IDENTICAL</b>
+HAAAAA+CourierNewPSMT             36,020   36,020   <b>IDENTICAL</b>
+
+byte-identical: <b>6 of 7</b></pre>
+  <p class="sm">The one that differs is the <b>body text font</b>, and it differs only in
+    <code>glyf</code>, <code>hmtx</code> and <code>loca</code> — which glyphs are in the subset — not
+    in <code>cmap</code>, <code>cvt</code>, <code>fpgm</code>, <code>maxp</code>, <code>name</code>,
+    <code>post</code> or <code>prep</code>. Both carry the same source-font creation stamp of
+    <span class="mono">1990-08-06 13:14:42</span>.</p>
+  <p class="sm"><b>That is the same font files, on the same machine, subsetted by the same software</b>
+    — with different glyphs in the body because the body text changed. To fake it you would need not
+    merely OpenOffice 2.4 but the same physical font files, and six of your subsets would have to hash
+    identically to the file you were imitating.</p>
+</section>
+
+<section>
+  <h2>How the October draft is dated — without trusting the file</h2>
+  <p class="lead">A backdated clock can write any creation date. The dating below never uses one.</p>
+
+  <div class="card">
+    <h3>The early bound — a citation its author did not yet have</h3>
+    <p class="sm">On 22 August 2008 Satoshi asked Wei Dai for b-money's publication year and
+      <i>guessed</i>: <code>[1] W. Dai, "b-money," … (2006?)</code>. Dai replied: <b>1998</b>. The
+      draft reads <code>[1] W. Dai, "b-money," … 1998.</code> — so it postdates Dai's reply.</p>
+  </div>
+  <div class="card">
+    <h3>The late bound — a paragraph he had not yet written</h3>
+    <p class="sm">The draft has <b>no Section 6 transaction-fee paragraph</b>. Satoshi proposed
+      transaction fees
+      <a href="https://www.metzdowd.com/pipermail/cryptography/2008-November/014842.html">on the
+      mailing list on 9 November 2008</a> — <i>“it's easy to tweak it for transaction fees
+      instead”</i> — and referred to them the next day as <i>“the transaction fee based incentive
+      system I recently posted.”</i></p>
+  </div>
+<pre>after    Wei Dai's reply to the 22 Aug 2008 email   — holds a fact Satoshi lacked
+before   9 Nov 2008                                 — lacks a paragraph he hadn't written
+         <b>the file's own date, 3 Oct 2008, sits inside and does none of the work</b></pre>
+  <p class="sm">A forger cannot put a citation into a document before its author learned it, nor
+    remove a paragraph he had not yet written. Neither is reachable with a backdated clock.</p>
+</section>
+
+<section>
+  <h2>Where the October draft came from</h2>
+  <p class="lead">It did not appear from nowhere in 2020. Its history is on the same mailing list that
+    carried the announcement.</p>
+  <div class="tw"><table>
+    <tr><th>date</th><th>record</th></tr>
+    <tr><td class="mono">2015-01-24</td><td>Asked on the cryptography list whether anyone saved the original, a list member replies: <i>“Looks like I have it… the local date of the file I have is <b>2008 Nov 2</b>”</i> — <b>183,697 bytes</b></td></tr>
+    <tr><td class="mono">2015-01-25</td><td>Posts the hash <span class="mono">427c63b3…982faa</span>. Another member replies that <i>“the one everyone else has”</i> is <span class="mono">b1674191…</span> — the community had only the canonical file</td></tr>
+    <tr><td class="mono">2015-01-30</td><td>A named recipient receives it by anonymous remailer in ~26 parts, reassembles and <b>republishes</b> it — same hash</td></tr>
+    <tr><td class="mono">2015-02-14</td><td>The Internet Archive <a href="https://web.archive.org/web/20150214024140if_/https://www.blacksheepatorenco.com/bitcoin.html">captures that page</a>, hash and all</td></tr>
+    <tr><td class="mono">2017-08-17</td><td><b>Ray Dillinger</b> — who argued with Satoshi in the original November 2008 thread — confirms: <i>“Yes. The hash matches. That's definitely it.”</i></td></tr>
+  </table></div>
+  <p class="sm">So the hash sits in <b>two independent third-party records from early 2015</b>, five
+    years before the archive.org copy existed, and is confirmed by a participant from 2008. And the
+    content dating agrees with the custody claim <b>without either knowing about the other</b>: he
+    said early November 2008; the absent fee paragraph independently says before 9 November 2008.</p>
+  <p class="sm"><i>Recorded for completeness: in 2015 he gives the file's local date as 2 November
+    2008; in 2017 he writes “received here 2008 November 8”. Six days apart. Both precede the fee
+    proposal, so the dating is unaffected — but the two statements are not identical.</i></p>
+</section>
+
+<section>
+  <h2>What a court found</h2>
+  <p class="lead">COPA v Wright, <a href="https://caselaw.nationalarchives.gov.uk/ewhc/ch/2024/1198">[2024] EWHC 1198 (Ch)</a>,
+    Mr Justice Mellor, 20 May 2024 — 1,698 paragraphs, on expert evidence tested by cross-examination.</p>
+  <div class="quote">“After significant scrutiny and verification via third party sources, he
+    identified {ID_000226} and {ID_000865} as suitable <b>‘control’ copies</b> of versions of the
+    Bitcoin White Paper. <b>{ID_000226} has a creation date of 3 October 2008.</b>”
+    <cite>the 3 October draft, used as a forensic baseline</cite></div>
+  <div class="quote">“The White Paper was <b>not written in LaTeX but in OpenOffice 2.4</b> (a finding
+    consistent with the metadata of the public Bitcoin White Paper versions).”
+    <cite>¶303.1 — the Joint Statement of <i>both parties'</i> experts</cite></div>
+  <p class="sm">The judgment also records that <b>OpenOffice 2.4.0 was released on 26 March 2008</b>
+    (¶271.1) — a floor on any document claiming that toolchain — and states the forgery method
+    plainly (¶123): a file could be made <i>“by downloading and running that software on a computer
+    (or virtual computer) with a <b>backdated clock</b>.”</i> Which is precisely why the dating above
+    uses content rather than metadata.</p>
+</section>
+
+<section id="chronology">
+  <h2>The chronology, with its proofs</h2>
+  <p class="lead">Every line carries the record that dates it, and the class of that record. Nothing
+    here rests on repetition or on conventional account.</p>
+  <div class="tw"><table>
+    <tr><th>date</th><th>event</th><th>what dates it</th></tr>
+    <tr><td class="mono">2008-08-18</td><td>bitcoin.org registered</td><td>RDAP, still live. <b>Registrant not recorded</b>; the attribution to Satoshi is the court's agreed background (¶23.1), not a registry fact</td></tr>
+    <tr><td class="mono"><b>2008-08-20</b></td><td><b>Satoshi emails Adam Back</b> — the earliest known Satoshi communication</td><td>trial exhibit <span class="mono">{L3/190}</span>, quoted at ¶661</td></tr>
+    <tr><td class="mono">2008-08-21</td><td>Back replies, pointing him to b-money</td><td><span class="mono">{L3/194}</span>, ¶663</td></tr>
+    <tr><td class="mono">2008-08-22</td><td>Satoshi emails Wei Dai for the b-money year</td><td>published by Wei Dai; quoted in <i>The Sunday Times</i>, 2014</td></tr>
+    <tr><td class="mono">2008-10-03</td><td>the surviving draft's creation date</td><td>the file's own metadata — corroborative only</td></tr>
+    <tr><td class="mono">2008-10-05</td><td><span class="mono">nakamoto2</span> SourceForge account created</td><td>archived user page (server-set) <b>and</b> ¶23.3</td></tr>
+    <tr><td class="mono">2008-10-31</td><td><b>the paper announced</b>, abstract quoted inline</td><td><a href="https://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html">metzdowd archive</a>, in server-recorded arrival order</td></tr>
+    <tr><td class="mono">2008-11-08</td><td>Satoshi quotes his own Section 4 on the list</td><td><a href="https://www.metzdowd.com/pipermail/cryptography/2008-November/014831.html">msg 014831</a> — 41 words, identical to the shipped PDF</td></tr>
+    <tr><td class="mono">2008-11-09</td><td><b>transaction fees proposed</b> — the draft's late bound</td><td><a href="https://www.metzdowd.com/pipermail/cryptography/2008-November/014842.html">msg 014842</a></td></tr>
+    <tr><td class="mono">2008-12-08/09</td><td>the paper uploaded to SourceForge</td><td>¶23.5. <b>That file is not preserved</b> and its size was never captured</td></tr>
+    <tr><td class="mono">2009-01-03</td><td>the genesis block</td><td><b>proof-of-work</b> — the only unforgeable class here</td></tr>
+    <tr><td class="mono">2009-03-24</td><td>the canonical file created, and released to SourceForge <b>the same day</b></td><td>the file's metadata <b>and</b> SourceForge's own activity feed (“176 days ago”, captured 2009-09-16) <b>and</b> ¶23.9</td></tr>
+    <tr><td class="mono">2009-11-29</td><td>earliest verified capture of the canonical</td><td><a href="https://web.archive.org/web/20091129014142if_/http://sourceforge.net:80/projects/bitcoin/files/Research%20Paper/bitcoin.pdf/">SourceForge listing</a>: 184.3&nbsp;KB dated 2009-03-24</td></tr>
+    <tr><td class="mono">2013-04-06</td><td>the canonical embedded in <b>block 230009</b></td><td>proof-of-work</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>What was searched, and is not there</h2>
+  <p class="lead">The part that makes the rest usable. These are <b>searched negatives</b>, not
+    untried routes — recorded so nobody repeats them.</p>
+  <ul class="sm">
+    <li><b>The 31 October 2008 bytes.</b> No capture, download or published hash of
+      <span class="mono">bitcoin.org/bitcoin.pdf</span> from 2008 exists anywhere. The Internet
+      Archive's first capture of that URL is <b>2010-07-04</b>; Common Crawl's 2008–2009 crawl
+      <i>ran during the window</i> and never visited the domain.</li>
+    <li><b>The August 2008 draft.</b> Its link — <span class="mono">upload.ae/file/6157/ecash-pdf.html</span>
+      — has 20 Wayback captures, <b>every one a 404, 302 or 406</b>, earliest 2020: already dead when
+      first crawled. The three obvious holders (Wei Dai, Adam Back, Gregory Maxwell) were asked years
+      ago and <b>do not have copies</b>; Hal Finney was asked and died in August 2014.</li>
+    <li><b>The December 2008 SourceForge file.</b> Replaced on 2009-03-24. Its size was never captured
+      — there is a Wayback gap for that project from January to September 2009, and the file-detail
+      page is the only page carrying a size. <b>Not recoverable by machine.</b></li>
+    <li><b>The cypherpunks cross-post.</b> The announcement was forwarded to
+      <span class="mono">cypherpunks@al-qaeda.net</span> on 1 Nov 2008. That node ran 2005–2013
+      <b>without public archives</b>; the surviving cypherpunks archives cover the 1990s and 2013
+      onward. The second list it was cross-posted to is an empty stub — one subscribe confirmation.</li>
+    <li><b>The COPA expert reports</b> (Madden, Rosendahl) are referenced by exhibit number throughout
+      the judgment but are <b>not published</b>. The judgment quotes them extensively; that is what
+      exists publicly.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>So — is this “the real whitepaper”?</h2>
+  <p>You have to say which one, and then the answer is exact.</p>
+  <p><b>As “the paper as it stood when it was announced in October 2008”</b> — the 3 October draft is
+    about as established as a document gets: byte-identical from two unrelated hosts, its hash in two
+    independent 2015 records, confirmed by a participant from the 2008 thread, a forensic control copy
+    in the High Court, sharing six byte-identical font programs and its entire toolchain with the
+    canonical, and bracketed on both sides by evidence that is not its own metadata.</p>
+  <p><b>What is not true, and we will not pretend otherwise:</b> no 2008 cryptographic timestamp
+    exists for any version. The earliest recorded hash is January 2015. The early-November download
+    rests on a pseudonymous party's word — corroborated by content, but not anchored. And it is not
+    <i>demonstrated</i> to be the exact bytes behind the 31 October link, only the simplest
+    explanation of every observation.</p>
+  <p><b>That residual doubt is not a gap in this research.</b> It is a property of the 2008 record:
+    nobody hashed the file at the time, and no one can retroactively. Anyone claiming cryptographic
+    certainty about an October 2008 document is overstating. What can be done is to state exactly
+    where the line falls — which is what this page is for.</p>
+</section>
+
+<footer aria-label="provenance and license">
+  <div class="fbrand">◆ The Bitcoin Whitepaper — provenance</div>
+  <p><span class="k">verify</span> &nbsp;whitepaper_from_chain.py · pdf_structure.py · pdf_fonts.py · pdf_text.py</p>
+  <p><span class="k">classes</span> &nbsp;proof-of-work &gt; server-recorded &gt; adjudicated &gt; archive-position &gt; self-asserted</p>
+  <p><span class="k">sources</span> &nbsp;metzdowd.com pipermail · Internet Archive · SourceForge · the block chain · [2024] EWHC 1198 (Ch)</p>
+  <p style="margin-top:12px"><span class="k">related</span> &nbsp;<a href="https://bitcoin-lab.org">Original Bitcoin Laboratory</a> — executable reconstruction of the earliest Bitcoin ·
+    <a href="https://satoshioncha.in">Satoshi On-Chain</a> — the verifiable footprint of the original Satoshi</p>
+  <p class="flegal">MIT © 2026 <a href="https://github.com/parthod0x">parthod0x</a> ·
+    <a href="https://github.com/original-bitcoin-laboratory/bitcoin-whitepaper">source</a> ·
+    not money, not financial advice · no warranty</p>
+</footer>
+
+</main>
+</body>
+</html>
