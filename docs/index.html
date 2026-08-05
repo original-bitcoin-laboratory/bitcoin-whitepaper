@@ -141,6 +141,25 @@
         October 2008.</td>
     </tr>
   </table></div>
+
+  <div class="card">
+    <h3>A warning: a 2024 re-save is circulating as the 2008 draft</h3>
+    <p class="sm">A file named for the October 2008 draft is published on GitHub for technical
+      comparison, and it is <b>not</b> that draft. It is the same document <b>re-saved on 30 March
+      2024</b> — which is easy to miss, because re-saving preserves the original creation date.</p>
+<pre>                        bytes     sha256          /CreationDate            /ModDate
+the re-save           188,867   <b>f5aa8f4b…</b>   D:20081003134958-07'00'  <b>D:20240330175340+10'00'</b>
+the genuine draft     <b>183,697</b>   <b>427c63b3…</b>   D:20081003134958-07'00'  (none)</pre>
+    <p class="sm">Three independent tells: an added <span class="mono">/ModDate</span> at an
+      Australian offset; a size <b>closer to the canonical's 184,292</b> than the real draft's, so a
+      size check can pass it; and the structural giveaway — a PDF writer sets the two halves of
+      <span class="mono">/ID</span> equal on first save and never again. <b>They are equal in the
+      genuine draft and unequal in the re-save.</b> Its text is the October text (no fee paragraph),
+      so only the file differs — but <b>anyone publishing its hash as “the 3 October 2008 whitepaper”
+      is publishing the fingerprint of a 2024 file</b>.</p>
+    <p class="sm">This is the second such near-miss we have caught, and the reason
+      <span class="mono">verify/audit_published_hashes.py</span> exists.</p>
+  </div>
 </section>
 
 <section>
