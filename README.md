@@ -10,12 +10,34 @@ how to identify any copy from its contents alone, and exactly where proof ends a
 |---|---|---|
 | **August 2008** — *Electronic Cash Without a Trusted Third Party* | **lost** | unknown; its link was never archived |
 | **3 October 2008** | held | `427c63b364c6db914cf23072a09ffd53ee078397b7c6ab2d604e12865a982faa` |
-| **11 November 2008** | **not held** | a control copy in COPA v Wright (Rosendahl Exhibit AR3); contents not public |
+| **11 November 2008** | **not held** | created `2008-11-11 16:00:34 UTC`; a control copy in COPA v Wright — Exhibit AR3 = NB1 = BWP-NB1; contents not public |
 | **24 March 2009** — canonical | held, chain-anchored | `b1674191a88ec5cdd733e4240a81803105dc412d6c6708d53ab94fc248f4f553` |
 
 The **11 November 2008** version is dated two days after Satoshi proposed transaction fees on the
 mailing list. Whether it carries the Section 6 fee paragraph would date that addition to within 48
-hours. The exhibit is not public.
+hours. The file itself is not public — but a great deal about it is:
+
+- **It was the version the public could download in January 2009.** Nicholas Bohm, a retired
+  solicitor who read the cryptography mailing list, downloaded it on **18 January 2009 at 13:27 GMT**
+  and still had it in 2023. His witness statement (§19) reports its creation stamp as
+  **11 November 2008, 08:00:34 at UTC−08:00**.
+- **Patrick Madden analysed it** at Appendix PM3 §§41–73 and considers it *"very likely to be an
+  authentic intermediate draft"* between the October 2008 and March 2009 versions.
+- Its bytes, and Appendix PM3 itself, remain unpublished.
+
+### The canonical file's identity is closed
+
+Madden's First Expert Report §180 publishes the hashes of the court's own control copy (ID_000865):
+
+```
+MD5:    d56d71ecadf2137be09d8b1d35c6c042
+SHA256: b1674191a88ec5cdd733e4240a81803105dc412d6c6708d53ab94fc248f4f553
+```
+
+Both match the file recovered from the block chain. Together with
+`X-Archive-Orig-Last-Modified: Tue, 24 Mar 2009 17:33:15 GMT` from bitcoin.org's own filesystem and
+the PDF's own `/CreationDate`, three independent classes of evidence — self-asserted, server-recorded
+and adjudicated — agree on the same bytes and the same instant, to the second.
 
 ---
 

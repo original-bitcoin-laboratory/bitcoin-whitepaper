@@ -115,20 +115,30 @@
         Used as a <b>forensic control copy in the High&nbsp;Court</b>.</td>
     </tr>
     <tr>
-      <td><b>11 November 2008</b><br><span class="sm">exists in the court record</span></td>
+      <td><b>11 November 2008</b><br><span class="mono sm">created 16:00:34 UTC<br>08:00:34 at UTC−08:00</span></td>
       <td><span class="tag t-gone">not held</span></td>
-      <td class="v-gone">A control copy in <b>COPA v Wright</b> — Rosendahl's Exhibit AR3, described as
-        the <i>“November 2008 version”</i> and dated <b>11 November 2008</b>. <b>Two days after Satoshi
-        proposed transaction fees on the mailing list.</b> Its contents are not public, so whether it
-        carries the Section&nbsp;6 fee paragraph is unknown — and that is the most interesting open
-        question about the paper's text.</td>
+      <td class="v-gone">A control copy in <b>COPA v Wright</b>, appearing under three names for one
+        file: Rosendahl's <b>Exhibit AR3</b>, Bohm's <b>Exhibit NB1</b>, Madden's <b>BWP-NB1</b>.
+        <b>Two days after Satoshi proposed transaction fees on the mailing list.</b>
+        <b>This was the version the public could download in January 2009</b> — the retired solicitor
+        <b>Nicholas Bohm</b>, a mailing-list reader rather than a private correspondent, downloaded it
+        <b>18 January 2009 at 13:27 GMT</b> and still had it fifteen years later; his statement gives
+        its creation stamp to the second. Madden judged it
+        <i>“very likely to be an authentic intermediate draft”</i> between the October 2008 and March
+        2009 versions (Appendix PM3 §§41–73, not published). Its text remains unpublished, so whether
+        it carries the Section&nbsp;6 fee paragraph is <b>still the most interesting open question
+        about the paper</b>.</td>
     </tr>
     <tr>
       <td><b>24 March 2009</b><br><span class="mono sm">184,292 bytes<br>b1674191…f4f553</span></td>
       <td><span class="tag t-chain">held · chain-anchored</span></td>
       <td>The canonical file — what <span class="mono">bitcoin.org/bitcoin.pdf</span> serves today.
-        <b>Embedded in the block chain</b> at block 230009. This is the design as its author last
-        stated it; it is <b>not</b> a witness to October 2008.</td>
+        <b>Embedded in the block chain</b> at block 230009. The <b>High Court's own control copy</b>
+        (ID_000865) is byte-identical: Madden's First Report §180 publishes its
+        <span class="mono">MD5 d56d71ec…c042</span> and
+        <span class="mono">SHA256 b1674191…f4f553</span>, both matching the bytes recovered from the
+        chain. This is the design as its author last stated it; it is <b>not</b> a witness to
+        October 2008.</td>
     </tr>
   </table></div>
 </section>
@@ -279,6 +289,17 @@ before   9 Nov 2008                                 — lacks a paragraph he had
   <div class="quote">“The White Paper was <b>not written in LaTeX but in OpenOffice 2.4</b> (a finding
     consistent with the metadata of the public Bitcoin White Paper versions).”
     <cite>¶303.1 — the Joint Statement of <i>both parties'</i> experts</cite></div>
+  <div class="quote">“To illustrate, the hashes of the Bitcoin White Paper (ID_000865) are as follows:
+    <b>MD5: d56d71ecadf2137be09d8b1d35c6c042</b> ·
+    <b>SHA256: b1674191a88ec5cdd733e4240a81803105dc412d6c6708d53ab94fc248f4f553</b>”
+    <cite>Madden, First Expert Report §180 — and both match the file recovered from the block chain</cite></div>
+  <p class="lead" style="margin-top:1rem">So the canonical file's identity is attested by
+    <b>three independent classes at once</b>, agreeing to the second and to the byte: the PDF's own
+    <span class="mono">/CreationDate</span>; <b>bitcoin.org's own filesystem</b>, recovered as
+    <span class="mono">X-Archive-Orig-Last-Modified: Tue, 24 Mar 2009 17:33:15 GMT</span>; and a
+    <b>High Court expert's report</b> on the copy the court itself used as its control. A self-claim,
+    a web server the author did not run, and an expert cross-examined on his work — all naming the
+    same instant and the same bytes.</p>
   <p class="sm">The judgment also records that <b>OpenOffice 2.4.0 was released on 26 March 2008</b>
     (¶271.1) — a floor on any document claiming that toolchain — and states the forgery method
     plainly (¶123): a file could be made <i>“by downloading and running that software on a computer
@@ -301,9 +322,11 @@ before   9 Nov 2008                                 — lacks a paragraph he had
     <tr><td class="mono">2008-10-31</td><td><b>the paper announced</b>, abstract quoted inline</td><td><a href="https://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html">metzdowd archive</a>, in server-recorded arrival order</td></tr>
     <tr><td class="mono">2008-11-08</td><td>Satoshi quotes his own Section 4 on the list</td><td><a href="https://www.metzdowd.com/pipermail/cryptography/2008-November/014831.html">msg 014831</a> — 41 words, identical to the shipped PDF</td></tr>
     <tr><td class="mono">2008-11-09</td><td><b>transaction fees proposed</b> — the draft's late bound</td><td><a href="https://www.metzdowd.com/pipermail/cryptography/2008-November/014842.html">msg 014842</a></td></tr>
-    <tr><td class="mono"><b>2008-11-11</b></td><td><b>a further version exists</b> — Exhibit AR3, a court control copy</td><td>Rosendahl's expert report, COPA v Wright. <b>Not public</b>; we do not hold it</td></tr>
+    <tr><td class="mono"><b>2008-11-11</b></td><td><b>a fourth version is created</b>, 08:00:34 at UTC−08:00 — Exhibit AR3 / NB1 / BWP-NB1</td><td>Nicholas Bohm's witness statement §19, from his own copy's metadata, under a statement of truth. <b>Not public</b>; we do not hold it</td></tr>
     <tr><td class="mono">2008-12-08/09</td><td>the paper uploaded to SourceForge</td><td>¶23.5. <b>That file is not preserved</b> and its size was never captured</td></tr>
     <tr><td class="mono">2009-01-03</td><td>the genesis block</td><td><b>proof-of-work</b> — the only unforgeable class here</td></tr>
+    <tr><td class="mono"><b>2009-01-18</b></td><td><b>a member of the public downloads the paper</b>, 13:27 GMT — and it is the <b>11 November version</b></td><td>Bohm §19. He read the cryptography list, downloaded it, and still had the file in 2023. <b>This is what was on offer to the public in January 2009</b></td></tr>
+    <tr><td class="mono">2009-02-01</td><td>Satoshi sends Bohm <b>100 BTC</b>, unprompted</td><td>Bohm §15, under a statement of truth. <b>On-chain, in principle</b> — blocks ≈2406–2600; we have not yet located it</td></tr>
     <tr><td class="mono">2009-03-24</td><td>the canonical file created, and released to SourceForge <b>the same day</b></td><td>the file's metadata <b>and</b> SourceForge's own activity feed (“176 days ago”, captured 2009-09-16) <b>and</b> ¶23.9</td></tr>
     <tr><td class="mono">2009-11-28</td><td><b>earliest archived bytes</b> of the canonical</td><td><a href="https://web.archive.org/web/20091128185352if_/http://voxel.dl.sourceforge.net:80/project/bitcoin/Research%20Paper/bitcoin.pdf/bitcoin.pdf">SourceForge mirror</a> — an actual archived PDF. Download it; it hashes to <span class="mono">b1674191…</span>. <b>This is the capture the court's expert verified.</b></td></tr>
     <tr><td class="mono">2013-04-06</td><td>the canonical embedded in <b>block 230009</b></td><td>proof-of-work</td></tr>
@@ -370,6 +393,20 @@ before   9 Nov 2008                                 — lacks a paragraph he had
       opposite of what one would assume — and because it means “ask the people who downloaded it from
       SourceForge” was never a search strategy.</p>
   </div>
+  <div class="card">
+    <h3>But we now know <i>which version</i> was on offer</h3>
+    <p class="sm">The December file was replaced on 24 March 2009, so whatever it was, it was
+      <b>not</b> the canonical. Nicholas Bohm downloaded the paper on <b>18 January 2009 at 13:27
+      GMT</b> and his copy carries a creation date of <b>11 November 2008</b>. So the version the
+      public could obtain in that window was the fourth version — not the October draft, and not the
+      canonical.</p>
+    <p class="sm"><b>The limit, stated:</b> Bohm does not say <i>where</i> he downloaded the PDF from
+      — he names SourceForge or GitHub only for the software. So this does not prove the SourceForge
+      file was the 11 November version; it establishes what was publicly available, which is the
+      question that actually matters. Its size and MD5 would still be recoverable from SourceForge's
+      own <span class="mono">frs_file</span> table, whose schema is archived and does carry both
+      fields — but every host serving that research dataset is now dead.</p>
+  </div>
 </section>
 
 <section>
@@ -380,6 +417,11 @@ before   9 Nov 2008                                 — lacks a paragraph he had
     independent 2015 records, confirmed by a participant from the 2008 thread, a forensic control copy
     in the High Court, sharing six byte-identical font programs and its entire toolchain with the
     canonical, and bracketed on both sides by evidence that is not its own metadata.</p>
+  <p><b>As “the canonical paper, the one bitcoin.org serves”</b> — that question is now closed. Its
+    bytes are in the block chain; its creation instant is confirmed to the second by a web server the
+    author did not run; and a High Court expert publishes its MD5 and SHA256, both matching the file
+    recovered from the chain. Self-claim, server record and adjudicated finding agree completely.
+    There is nothing left to establish about it.</p>
   <p><b>What is not true, and we will not pretend otherwise:</b> no 2008 cryptographic timestamp
     exists for any version. The earliest recorded hash is January 2015. The early-November download
     rests on a pseudonymous party's word — corroborated by content, but not anchored. And it is not
