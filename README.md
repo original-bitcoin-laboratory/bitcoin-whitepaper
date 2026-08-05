@@ -10,7 +10,7 @@ how to identify any copy from its contents alone, and exactly where proof ends a
 |---|---|---|
 | **August 2008** — *Electronic Cash Without a Trusted Third Party* | **lost** | unknown; its link was never archived |
 | **3 October 2008** | held | `427c63b364c6db914cf23072a09ffd53ee078397b7c6ab2d604e12865a982faa` |
-| **11 November 2008** | **not held** | created `2008-11-11 16:00:34 UTC`; a control copy in COPA v Wright — Exhibit AR3 = NB1 = BWP-NB1; contents not public |
+| **11 November 2008** | **not held — but now identifiable** | `e6cc7c952c688b234f9872c3e2f50060ae6556fd27925cba503c6460048e50a9` (MD5 `3e5e11e1e3208d2829e887fb1c86bd05`), ≈184,300 bytes, created `2008-11-11 16:00:34 UTC` |
 | **24 March 2009** — canonical | held, chain-anchored | `b1674191a88ec5cdd733e4240a81803105dc412d6c6708d53ab94fc248f4f553` |
 
 The **11 November 2008** version is dated two days after Satoshi proposed transaction fees on the
@@ -23,7 +23,11 @@ hours. The file itself is not public — but a great deal about it is:
   **11 November 2008, 08:00:34 at UTC−08:00**.
 - **Patrick Madden analysed it** at Appendix PM3 §§41–73 and considers it *"very likely to be an
   authentic intermediate draft"* between the October 2008 and March 2009 versions.
-- Its bytes, and Appendix PM3 itself, remain unpublished.
+- **Its hashes are now known**, from Appendix PM3 §42 — so a candidate copy can be verified in one
+  command, even though the file is in no public hands.
+- **It carries the transaction-fee text**, in a wording unique to it (PM3 §52), which we verified is
+  absent from both versions we hold. Satoshi proposed fees on the list on 9 November 2008; the text
+  was in the paper **two days later**, and was reworded again for March 2009.
 
 ### The canonical file's identity is closed
 
@@ -53,7 +57,7 @@ file, which is why they identify even the versions nobody has. **The 11 November
 | Hashcash reference | **`[5]`** | `[6]` | unknown | `[6]` |
 | b-money citation | **absent** | `[1]` … 1998 | unknown | `[1]` … 1998 |
 | "the burdens of" | yes | yes | unknown | no |
-| Section 6 transaction fees | absent | **absent** | **THE OPEN QUESTION** | present |
+| Section 6 transaction fees | absent | **absent** | **present — first wording** | present, reworded |
 | contact address | — | `satoshi@vistomail.com` | unknown | `satoshin@gmx.com` |
 
 The reference numbering comes from Satoshi's 20 August 2008 email to Adam Back, quoted in

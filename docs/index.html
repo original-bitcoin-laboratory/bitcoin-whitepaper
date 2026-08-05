@@ -115,19 +115,20 @@
         Used as a <b>forensic control copy in the High&nbsp;Court</b>.</td>
     </tr>
     <tr>
-      <td><b>11 November 2008</b><br><span class="mono sm">created 16:00:34 UTC<br>08:00:34 at UTC−08:00</span></td>
+      <td><b>11 November 2008</b><br><span class="mono sm">≈184,300 bytes<br>e6cc7c95…48e50a9</span></td>
       <td><span class="tag t-gone">not held</span></td>
       <td class="v-gone">A control copy in <b>COPA v Wright</b>, appearing under three names for one
         file: Rosendahl's <b>Exhibit AR3</b>, Bohm's <b>Exhibit NB1</b>, Madden's <b>BWP-NB1</b>.
-        <b>Two days after Satoshi proposed transaction fees on the mailing list.</b>
+        <b>Two days after Satoshi proposed transaction fees on the mailing list — and it carries
+        them.</b>
         <b>This was the version the public could download in January 2009</b> — the retired solicitor
         <b>Nicholas Bohm</b>, a mailing-list reader rather than a private correspondent, downloaded it
         <b>18 January 2009 at 13:27 GMT</b> and still had it fifteen years later; his statement gives
         its creation stamp to the second. Madden judged it
         <i>“very likely to be an authentic intermediate draft”</i> between the October 2008 and March
-        2009 versions (Appendix PM3 §§41–73, not published). Its text remains unpublished, so whether
-        it carries the Section&nbsp;6 fee paragraph is <b>still the most interesting open question
-        about the paper</b>.</td>
+        2009 versions. <b>Its hashes are now known</b> — published in Appendix PM3 §42 — so any
+        candidate copy can be verified instantly, even though the file itself is still in no
+        public hands.</td>
     </tr>
     <tr>
       <td><b>24 March 2009</b><br><span class="mono sm">184,292 bytes<br>b1674191…f4f553</span></td>
@@ -170,16 +171,18 @@ the genuine draft     <b>183,697</b>   <b>427c63b3…</b>   D:20081003134958-07'
   <h2>Identify any copy in ten seconds</h2>
   <p class="lead">Six tests, all plain text searches. <b>Four of them come from Satoshi's own words in
     dated records</b> rather than from any file — which is why they can identify even the versions
-    nobody has. <b>Two of the four columns below are empty on purpose:</b> those are the versions not
-    in public hands, and the empty cells are exactly what a surfacing copy would have to fill in.</p>
+    nobody has. <b>The August 2008 column is empty on purpose</b> — that version is lost, and those cells are
+    what a surfacing copy would have to fill in. The 11 November column was empty until its analysis
+    became available; the entries below now come from <b>Appendix PM3</b>, not from the file, which
+    is still in no public hands.</p>
   <div class="tw"><table>
     <tr><th>test</th><th>Aug 2008 (lost)</th><th>3 Oct 2008</th><th>11 Nov 2008 (not held)</th><th>24 Mar 2009</th></tr>
-    <tr><td><b>title</b></td><td class="v-gone">Electronic Cash Without a Trusted Third Party</td><td>Bitcoin: A Peer-to-Peer…</td><td class="v-gone">unknown</td><td>Bitcoin: A Peer-to-Peer…</td></tr>
+    <tr><td><b>title</b></td><td class="v-gone">Electronic Cash Without a Trusted Third Party</td><td>Bitcoin: A Peer-to-Peer…</td><td>Bitcoin: A Peer-to-Peer…</td><td>Bitcoin: A Peer-to-Peer…</td></tr>
     <tr><td><b>“Digital signatures …”</b></td><td class="v-gone"><b>offer</b> part of the solution</td><td><b>provide</b> part</td><td class="v-gone">unknown</td><td><b>provide</b> part</td></tr>
     <tr><td><b>Hashcash reference no.</b></td><td class="v-gone"><b>[5]</b></td><td>[6]</td><td class="v-gone">unknown</td><td>[6]</td></tr>
     <tr><td><b>b-money citation</b></td><td class="v-gone"><b>absent entirely</b></td><td>[1] … 1998</td><td class="v-gone">unknown</td><td>[1] … 1998</td></tr>
     <tr><td>“the burdens of”</td><td class="v-gone">yes</td><td>yes</td><td class="v-gone">unknown</td><td>no</td></tr>
-    <tr><td><b>Section 6 transaction fees</b></td><td class="v-gone">absent</td><td><b>absent</b></td><td class="v-gone"><b>THE OPEN QUESTION</b></td><td>present</td></tr>
+    <tr><td><b>Section 6 transaction fees</b></td><td class="v-gone">absent</td><td><b>absent</b></td><td><b>PRESENT — first wording</b></td><td>present, reworded</td></tr>
     <tr><td>contact address</td><td class="v-gone">—</td><td class="mono">satoshi@vistomail.com</td><td class="v-gone">unknown</td><td class="mono">satoshin@gmx.com</td></tr>
   </table></div>
 
@@ -331,6 +334,58 @@ before   9 Nov 2008                                 — lacks a paragraph he had
     uses content rather than metadata.</p>
 </section>
 
+<section>
+  <h2>The fourth version, and when transaction fees entered the paper</h2>
+  <p class="lead">The 11 November 2008 version is in no public hands. But <b>Appendix PM3</b> to
+    Patrick Madden's First Expert Report analyses it in detail, and that analysis settles two things
+    this page could not previously answer.</p>
+
+  <div class="card">
+    <h3>Its fingerprint — so any candidate copy can be checked</h3>
+<pre>BWP-NB1   MD5    <b>3e5e11e1e3208d2829e887fb1c86bd05</b>
+          SHA256 <b>e6cc7c952c688b234f9872c3e2f50060ae6556fd27925cba503c6460048e50a9</b>
+          created  11 Nov 2008 08:00:34 at UTC−08:00     Writer / OpenOffice.org 2.4 / PDF 1.4
+          trailer  /ID &lt;693BFE527899A65C197B4CD42561A6C4&gt; &lt;693BFE527899A65C197B4CD42561A6C4&gt;
+                   startxref 182801  →  roughly 184,300 bytes</pre>
+    <p class="sm">Note the <span class="mono">/ID</span> halves are <b>equal</b> — the mark of a file
+      written once and never re-saved, the same test that exposes the modern re-typesets described
+      above. Madden reports that the <b>first few kilobytes are an identical match to the October
+      draft</b>, that all three versions embed the same fonts in the same order, and that he found
+      <b>no indication of manipulation</b>.</p>
+  </div>
+
+  <div class="card">
+    <h3>It carries the transaction-fee text — two days after fees were proposed</h3>
+    <p class="sm">Madden reports three strings <b>unique to this version</b> among the three:</p>
+<pre>“The incentive is also funded with transaction fees”
+“The output value of every transaction is equal to the input value minus a transaction fee”
+“and the incentive is increased by the total transaction fees in the block”</pre>
+    <p class="sm"><b>We checked all three against the two files we hold: absent from both.</b> The
+      canonical says something close but not the same — <i>“The incentive <b>can also be</b> funded
+      with transaction fees. <b>If</b> the output value of a transaction <b>is less than</b> its input
+      value, the difference is a transaction fee…”</i> — so the block was written once for November
+      and edited again for March. The October draft has <b>no fee text at all</b>.</p>
+    <p class="sm">Which dates the arrival of the fee mechanism precisely:</p>
+<pre> 3 Oct 2008   no transaction fees in the paper
+ <b>9 Nov 2008   Satoshi proposes transaction fees on the mailing list</b>
+<b>11 Nov 2008   the fee text is in the paper — first wording        ← two days later</b>
+24 Mar 2009   the same block reworded to the form everyone knows</pre>
+    <p class="sm">This page previously called that the most interesting open question about the
+      paper's text. It is now answered — <b>not from the file, which nobody public holds, but from a
+      forensic analysis of it filed in court</b>.</p>
+  </div>
+
+  <p class="sm"><b>Provenance and limits.</b> These figures come from Appendix PM3 §§41–58, obtained
+    as extracted text from a publicly published dataset of the trial bundle. Before relying on it we
+    ran a control: PM3 quotes internal <span class="mono">/ID</span> and
+    <span class="mono">/CreationDate</span> values for the two versions we already hold, and
+    <b>both matched our own files exactly</b> — byte-level values the extraction could not have
+    guessed. Madden also records that he could find <b>no other copy of this file anywhere</b>: not
+    in Dr Wright's disclosure, not on archive.org, not on the Wayback Machine's captures of
+    bitcoin.org, and no hit for either hash on the open web. <b>We still do not have the file.</b>
+    What changed is that anyone who finds a candidate can now settle it in one command.</p>
+</section>
+
 <section id="chronology">
   <h2>The chronology, with its proofs</h2>
   <p class="lead">Every line carries the record that dates it, and the class of that record. Nothing
@@ -346,7 +401,7 @@ before   9 Nov 2008                                 — lacks a paragraph he had
     <tr><td class="mono">2008-10-31</td><td><b>the paper announced</b>, abstract quoted inline</td><td><a href="https://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html">metzdowd archive</a>, in server-recorded arrival order</td></tr>
     <tr><td class="mono">2008-11-08</td><td>Satoshi quotes his own Section 4 on the list</td><td><a href="https://www.metzdowd.com/pipermail/cryptography/2008-November/014831.html">msg 014831</a> — 41 words, identical to the shipped PDF</td></tr>
     <tr><td class="mono">2008-11-09</td><td><b>transaction fees proposed</b> — the draft's late bound</td><td><a href="https://www.metzdowd.com/pipermail/cryptography/2008-November/014842.html">msg 014842</a></td></tr>
-    <tr><td class="mono"><b>2008-11-11</b></td><td><b>a fourth version is created</b>, 08:00:34 at UTC−08:00 — Exhibit AR3 / NB1 / BWP-NB1</td><td>Nicholas Bohm's witness statement §19, from his own copy's metadata, under a statement of truth. <b>Not public</b>; we do not hold it</td></tr>
+    <tr><td class="mono"><b>2008-11-11</b></td><td><b>a fourth version is created</b>, 08:00:34 at UTC−08:00 — <b>carrying the new transaction-fee text</b></td><td>Bohm §19 for the file; <b>Appendix PM3 §§42–52</b> for its hashes and its unique text. <b>Still not public</b>; we do not hold it, but it can now be identified on sight</td></tr>
     <tr><td class="mono">2008-11-17</td><td><b>the list moderator ends the discussion</b>, 4h 19m after Satoshi's last post</td><td><a href="https://www.metzdowd.com/pipermail/cryptography/2008-November/">metzdowd archive</a> — <i>“ADMIN: end of bitcoin discussion for now.”</i> The 52-day silence that follows is <b>a moderated list being moderated</b>, not a withdrawal</td></tr>
     <tr><td class="mono">2008-12-08/09</td><td>the paper uploaded to SourceForge</td><td>¶23.5. <b>That file is not preserved</b> and its size was never captured</td></tr>
     <tr><td class="mono">2009-01-03</td><td>the genesis block</td><td><b>proof-of-work</b> — the only unforgeable class here</td></tr>
