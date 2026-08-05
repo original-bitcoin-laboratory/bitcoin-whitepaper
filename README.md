@@ -44,17 +44,17 @@ and adjudicated — agree on the same bytes and the same instant, to the second.
 ## Identify any copy
 
 Six plain-text tests. **Four come from Satoshi's own words in dated records** rather than from any
-file, which is why they identify even the version nobody has.
+file, which is why they identify even the versions nobody has. **The 11 November column is blank on purpose** — those blanks are exactly what a surfacing copy would fill in.
 
-| test | Aug 2008 (lost) | 3 Oct 2008 | 24 Mar 2009 |
-|---|---|---|---|
-| title | *Electronic Cash Without a Trusted Third Party* | *Bitcoin: A Peer-to-Peer…* | *Bitcoin: A Peer-to-Peer…* |
-| "Digital signatures …" | **offer** part | **provide** part | **provide** part |
-| Hashcash reference | **`[5]`** | `[6]` | `[6]` |
-| b-money citation | **absent** | `[1]` … 1998 | `[1]` … 1998 |
-| "the burdens of" | yes | yes | no |
-| Section 6 transaction fees | absent | **absent** | present |
-| contact address | — | `satoshi@vistomail.com` | `satoshin@gmx.com` |
+| test | Aug 2008 (lost) | 3 Oct 2008 | 11 Nov 2008 (not held) | 24 Mar 2009 |
+|---|---|---|---|---|
+| title | *Electronic Cash Without a Trusted Third Party* | *Bitcoin: A Peer-to-Peer…* | unknown | *Bitcoin: A Peer-to-Peer…* |
+| "Digital signatures …" | **offer** part | **provide** part | unknown | **provide** part |
+| Hashcash reference | **`[5]`** | `[6]` | unknown | `[6]` |
+| b-money citation | **absent** | `[1]` … 1998 | unknown | `[1]` … 1998 |
+| "the burdens of" | yes | yes | unknown | no |
+| Section 6 transaction fees | absent | **absent** | **THE OPEN QUESTION** | present |
+| contact address | — | `satoshi@vistomail.com` | unknown | `satoshin@gmx.com` |
 
 The reference numbering comes from Satoshi's 20 August 2008 email to Adam Back, quoted in
 **COPA v Wright [2024] EWHC 1198 (Ch)** at ¶661, in which he cites his own draft as
@@ -160,3 +160,8 @@ Recorded so nobody repeats them:
 Three domains, three remits: **the code**, **the identity**, **the document**.
 
 MIT © 2026 [parthod0x](https://github.com/parthod0x) · not money, not financial advice · no warranty
+
+---
+
+**Rights, sourcing and corrections:** see [RIGHTS.md](RIGHTS.md) — what this project uses,
+where it comes from, how named people are treated, and how to ask for a correction.
