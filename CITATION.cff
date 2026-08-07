@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "The Bitcoin Whitepaper: which version is which, and how to check"
+abstract: >-
+  A provenance record of the versions of the Bitcoin whitepaper, with the tools to
+  re-derive it. Establishes what is machine-checkable about each version — hashes, PDF
+  structure, embedded fonts and text — grades the evidence behind each claim, and states
+  plainly which versions are held, which are known only by hash, and which are lost.
+  Experimental research, provided as is; findings are provisional.
+type: software
+authors:
+  - family-names: Saxena
+    given-names: Parth Mauria
+    email: parthms.id@gmail.com
+license: MIT
+repository-code: "https://github.com/original-bitcoin-laboratory/bitcoin-whitepaper"
+url: "https://bitcoinwhitepaper.online"
+keywords:
+  - Bitcoin
+  - whitepaper
+  - provenance
+  - document forensics
+  - reproducibility
