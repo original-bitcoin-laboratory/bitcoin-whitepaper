@@ -10,7 +10,7 @@ how to identify any copy from its contents alone, and exactly where proof ends a
 |---|---|---|
 | **August 2008** — *Electronic Cash Without a Trusted Third Party* | **lost** | unknown; its link was never archived |
 | **3 October 2008** | held | `427c63b364c6db914cf23072a09ffd53ee078397b7c6ab2d604e12865a982faa` |
-| **11 November 2008** | **not held — but now identifiable** | `e6cc7c952c688b234f9872c3e2f50060ae6556fd27925cba503c6460048e50a9` (MD5 `3e5e11e1e3208d2829e887fb1c86bd05`), ≈184,300 bytes, created `2008-11-11 16:00:34 UTC` |
+| **11 November 2008** | **not held — but now identifiable** | `e6cc7c952c688b234f9872c3e2f50060ae6556fd27925cba503c6460048e50a9` (MD5 `3e5e11e1e3208d2829e887fb1c86bd05`), created `2008-11-11 16:00:34 UTC`, **larger than 182,801 bytes** (≈184,300 — see note) |
 | **24 March 2009** — canonical | held, chain-anchored | `b1674191a88ec5cdd733e4240a81803105dc412d6c6708d53ab94fc248f4f553` |
 
 The **11 November 2008** version is dated two days after Satoshi proposed transaction fees on the
@@ -25,9 +25,37 @@ hours. The file itself is not public — but a great deal about it is:
   authentic intermediate draft"* between the October 2008 and March 2009 versions.
 - **Its hashes are now known**, from Appendix PM3 §42 — so a candidate copy can be verified in one
   command, even though the file is in no public hands.
+- **Its size is bounded, not measured.** No source states a byte count, but PM3 quotes the file's
+  trailer, which ends `startxref 182801` — the offset of its cross-reference table. So the file is
+  **provably larger than 182,801 bytes**. Calibrating the remaining tail against the two versions we
+  hold (1,505 and 1,565 bytes) puts it at **≈184,306–184,366** — marginally larger than the canonical.
+  *The bound is a fact; the estimate is an inference from two data points, and is labelled as one.*
+  Its trailer `/ID` halves are identical, meaning the file was **written once and never re-saved** —
+  the same signature the October draft carries.
 - **It carries the transaction-fee text**, in a wording unique to it (PM3 §52), which we verified is
   absent from both versions we hold. Satoshi proposed fees on the list on 9 November 2008; the text
   was in the paper **two days later**, and was reworded again for March 2009.
+
+### ★ If you have an old copy, you can check it by reading — no hashing required
+
+Madden's Appendix PM3 §52 identifies three sentences that appear in the 11 November file and in
+**neither** of the two versions that survive in public. We searched both held files directly and
+confirmed all three are absent:
+
+```
+"The incentive is also funded with transaction fees"
+"The output value of every transaction is equal to the input value minus a transaction fee"
+"and the incentive is increased by the total transaction fees in the block"
+```
+
+**Open any old `bitcoin.pdf`, press Ctrl-F, and search for the first one.** If it is there, you have
+the version nobody has — please get in touch. The canonical March 2009 text says something close but
+not the same (*"can also be funded"*, *"if the output value … is less than"*); the October 2008 draft
+has no transaction-fee text at all.
+
+**These sentences matter more than the hashes.** A hash matches only one exact file and no search
+engine indexes it. A sentence survives quotation, re-typing, and a paste into an old email — so it is
+worth searching your mail, not just your disk.
 
 ### The canonical file's identity is closed
 
@@ -150,7 +178,21 @@ Recorded so nobody repeats them:
 - **The December 2008 SourceForge upload** — replaced 2009-03-24; a Wayback gap for that project from
   January to September 2009 means its size was never captured.
 - **The cypherpunks cross-post** (1 Nov 2008) — that list node ran 2005–2013 without public archives.
-- **The COPA expert reports** — referenced by exhibit number throughout the judgment, not published.
+- **The 11 November file, in eight archives** — Internet Archive (tested on payload bytes, not just
+  capture dates), Common Crawl, archive.today, bitcoin.org's own git history, Arquivo.pt, Vefsafn.is,
+  **Software Heritage by content hash**, and **GitHub code search**. Every one controlled: the two
+  held versions are found where the target is not. Note that three of these bottom out at the *same*
+  July 2010 Wayback capture — archive.today's apparently independent 2010 row is labelled
+  `archived via web.archive.org`. **When two archives agree on the earliest date, check whether one is
+  quoting the other.**
+
+**Corrected — this list used to say the COPA expert reports were "not published".** They are. All six
+of Patrick Madden's reports and his 48 appendices are publicly available at
+[bitcoindefense.org](https://bitcoindefense.org), and the hashes and text tests above are drawn from
+them. **And Madden ran this search too**: at Appendix PM3 §§53–56 he records that the disclosure
+dataset, Google, and the Internet Archive's holdings of bitcoin.org produced no other instance of the
+11 November document — an independent negative, given under a duty to the court, that agrees with
+ours.
 
 ---
 
