@@ -418,10 +418,45 @@ before   9 Nov 2008                                 — lacks a paragraph he had
   <p class="lead">The part that makes the rest usable. These are <b>searched negatives</b>, not
     untried routes — recorded so nobody repeats them.</p>
   <ul class="sm">
-    <li><b>The 31 October 2008 bytes.</b> No capture, download or published hash of
-      <span class="mono">bitcoin.org/bitcoin.pdf</span> from 2008 exists anywhere. The Internet
-      Archive's first capture of that URL is <b>2010-07-04</b>; Common Crawl's 2008–2009 crawl
-      <i>ran during the window</i> and never visited the domain.</li>
+    <li><b>The 2008 bytes — on six independent archives.</b> No capture, download or published
+      hash of <span class="mono">bitcoin.org/bitcoin.pdf</span> from 2008 exists anywhere. This is
+      now established against <b>six instruments, not one</b>:
+      <div class="tw"><table>
+        <tr><th>archive</th><th>earliest record of that URL</th></tr>
+        <tr><td>Internet Archive</td><td><b>2010-07-04</b> — 499 CDX rows; two real payloads ever, neither is the missing file</td></tr>
+        <tr><td>Common Crawl</td><td><b>none.</b> <span class="mono">CC-MAIN-2008-2009</span> queried by name — zero captures of the host</td></tr>
+        <tr><td>archive.today</td><td><b>2016.</b> Its one 2010-dated row is labelled <i>“archived via web.archive.org”</i> — a re-archive of the row above, not an independent capture</td></tr>
+        <tr><td>bitcoin.org's own git</td><td><b>2011-08-31.</b> Two commits ever touch the file; the blob at the first is the canonical, verified by git-blob hash without downloading</td></tr>
+        <tr><td>Arquivo.pt (Portugal)</td><td><b>2014-11-27.</b> Host-wide: zero rows before 2010</td></tr>
+        <tr><td>Vefsafn.is (Iceland)</td><td><b>2011-08-04</b></td></tr>
+      </table></div>
+      <span class="sm">Three of the six bottom out at the <i>same</i> July 2010 capture — worth
+      knowing, because two archives sharing an earliest date looks like corroboration until one turns
+      out to be quoting the other. The two national archives were checked against that failure mode
+      and pass it: <b>zero exact-second timestamp collisions</b> with the Internet Archive. Both hold
+      the canonical, byte-verified by fetching and hashing.</span></li>
+    <li><b>Any commitment by Satoshi on the block chain.</b> He knew exactly how — on
+      <b>9 December 2010</b> he wrote out the transaction himself
+      (<span class="mono">txout: 0.00 &lt;appid, hash&gt; OP_CHECKSIG</span>) and endorsed Hal Finney's
+      simpler method of converting a file's hash to an address and paying it. <b>He used neither.</b>
+      Every on-chain channel has been scanned across his entire active era, for all known versions, in
+      both byte orders, under MD5 / SHA-1 / SHA-256 / double-SHA-256 / HASH160:
+      <div class="tw"><table>
+        <tr><th>channel</th><th>scope</th><th>result</th></tr>
+        <tr><td>coinbase scriptSigs</td><td>whole chain</td><td>nothing</td></tr>
+        <tr><td>non-coinbase scripts, 2009</td><td>by script type</td><td>nothing</td></tr>
+        <tr><td>hash-to-address (Finney's method)</td><td>whole chain</td><td>two — both third parties, 2013 and 2014</td></tr>
+        <tr><td>output scripts (Satoshi's own method)</td><td>blocks 0–150,000</td><td>nothing</td></tr>
+        <tr><td>input scripts</td><td>blocks 0–150,000</td><td>nothing</td></tr>
+      </table></div>
+      <span class="sm">The two hits are both derived from the <i>canonical</i> paper and both are
+      later third-party acts: a 2013 bulk send of 83 one-satoshi outputs, and a 2014 bot that stamped
+      100 files in eight weeks. <b>Nothing at all for the 11 November version</b> — which could be
+      tested for without holding a byte of it, since its hash is published in the court record. If
+      anyone had held that file and wanted to prove it, this was the cheap and publicly-endorsed way,
+      and it cost one cent. <b>Every negative above has a passing control behind it</b>; an empty
+      result and a broken query are indistinguishable without one.</span></li>
+
     <li><b>The August 2008 draft.</b> <b>Even a successful capture would not have saved it</b> —
       that URL was a file-host <i>landing page</i>, not the file. Fetching an actually-archived
       neighbouring page from the same host in 2009 shows what such a capture preserves: a filename,
@@ -496,6 +531,58 @@ before   9 Nov 2008                                 — lacks a paragraph he had
       collection (FLOSSmole) was enumerated file-by-file for four monthly dumps — <b>it carries no
       file-release table at all</b>, in any month. What remains is not a search but a person.</p>
   </div>
+</section>
+
+<section>
+  <h2>Can any of this ever prove Satoshi <i>wrote</i> it?</h2>
+  <p class="lead">No. And that is a fact about the evidence, not a gap in the searching — so it is
+    worth stating precisely rather than leaving as an impression.</p>
+
+  <p>Two questions get run together constantly, and they behave completely differently:</p>
+  <div class="tw"><table>
+    <tr><th></th><th>the question</th><th>can it be settled?</th></tr>
+    <tr><td><b>which file</b></td><td>which bytes did the author publish, and when?</td>
+        <td><b>Yes, in principle.</b> It is a search problem, and most of this page is its answer</td></tr>
+    <tr><td><b>who wrote it</b></td><td>is this text that person’s composition?</td>
+        <td><b>No. Not now, and not by any future discovery</b></td></tr>
+  </table></div>
+
+  <h3>Why the second one is closed</h3>
+  <p>To establish authorship by machine you would need a digital signature over the document, made
+    with a key established as the author’s independently of the claim. Three things stand in the
+    way, and the third is the one usually missed.</p>
+  <ul class="sm">
+    <li><b>No such signature exists.</b> The keys we can call Satoshi’s — by the convention that
+      the genesis coinbase key’s holder <i>is</i> Satoshi — have signed exactly two things, ever:
+      the transaction that paid Hal Finney 10 BTC in block 170, and the one that spent its change in
+      block 181. <b>Both are transaction signatures.</b> A Bitcoin transaction signature covers a
+      hash of the transaction; a message signature covers a hash of the message. For one to double
+      as the other you would need a second-preimage collision in SHA-256 — which is the thing
+      SHA-256 exists to prevent.</li>
+    <li><b>Nobody but the key-holder can create one.</b> That is not a research obstacle. It is what
+      a signature scheme <i>is</i>. Those keys have been dormant since 2011.</li>
+    <li><b>And even a signature would not prove authorship.</b> If the key-holder appeared tomorrow
+      and signed the canonical paper, it would establish one thing: <i>the holder of this key
+      endorses this document.</i> Not who composed it. <b>People sign documents they did not write —
+      that is what signatures are for.</b> Authorship is not a cryptographic property of a
+      document, and no amount of cryptography makes it one.</li>
+  </ul>
+
+  <p><b>So the honest ladder looks like this</b>, and the canonical paper sits near the top of what
+    is achievable rather than short of something that was ever available:</p>
+  <div class="tw"><table>
+    <tr><th>standard</th><th>status</th></tr>
+    <tr><td>a signature by a known-Satoshi key</td><td><b>impossible</b> — see above</td></tr>
+    <tr><td>an on-chain commitment by the author</td><td><b>none exists</b> — five channels, all scanned, all controlled</td></tr>
+    <tr><td>a hash published by a 2009 server</td><td><b>yes</b> — SourceForge’s own file API published <span class="mono">d56d71ec…c042</span> for <span class="mono">bitcoin.pdf</span>, and it matches</td></tr>
+    <tr><td>independent custodians holding identical bytes</td><td><b>yes</b> — SourceForge, the Internet Archive, Arquivo.pt, Vefsafn.is, and the block chain</td></tr>
+    <tr><td>forensic examination in a contested court</td><td><b>yes</b> — used as a control copy in COPA v Wright</td></tr>
+    <tr><td>internal evidence bracketing the date</td><td><b>yes</b> — the b-money citation, on both sides</td></tr>
+  </table></div>
+
+  <p><b>The canonical whitepaper is among the best-attested documents of its era. It is not, and
+    cannot become, a verified-<i>authored</i> one.</b> Anyone offering you cryptographic proof that
+    Satoshi wrote a particular file is selling something the mathematics does not contain.</p>
 </section>
 
 <section>
