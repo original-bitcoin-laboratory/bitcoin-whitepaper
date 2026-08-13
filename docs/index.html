@@ -417,6 +417,55 @@ before   9 Nov 2008                                 — lacks a paragraph he had
 </section>
 
 <section>
+  <h2>The announcement's own receipt, and a clock that was blamed wrongly</h2>
+  <p class="lead">The paper was announced by an email. That email's <b>arrival</b> was recorded by a
+    server that belonged to neither the sender nor the recipient &mdash; and that record is public,
+    though it took a while to find.</p>
+
+  <ul class="sm">
+    <li><b>The trace chain is archived, under a different header name.</b> Mailing-list archives
+      normally discard the SMTP receipt chain, and five of them return nothing when searched for
+      <span class="mono">Received:</span>. Gmane is a mail-to-news gateway: it <b>renames</b> those
+      headers <span class="mono">Original-Received:</span> so they do not collide with NNTP's own
+      path headers. The announcement is <span class="mono">gmane.comp.encryption.general</span>
+      article <span class="mono">12588</span>, and it carries the whole chain:
+      <div class="tw"><table>
+        <tr><th>stamped by</th><th>time</th><th>what it is</th></tr>
+        <tr><td class="mono">Date:</td><td class="mono">2008-10-31 18:10:00 UTC</td><td>written by the sending software &mdash; <b>self-asserted</b></td></tr>
+        <tr><td class="mono">anonymousspeech.com</td><td class="mono">18:20:18 UTC</td><td>the sending provider's own SMTP service</td></tr>
+        <tr><td class="mono">green.metzdowd.com</td><td class="mono">18:20:34 UTC</td><td><b>the list server's receipt</b> &mdash; a third party's clock</td></tr>
+        <tr><td class="mono">green.metzdowd.com</td><td class="mono">1&nbsp;Nov 23:15:35 UTC</td><td>the moderated release to subscribers</td></tr>
+      </table></div>
+      <span class="sm">The moderation queue is not a property of this message: across all eighteen
+      of that sender's list messages it runs from <b>7 minutes to 60 hours</b>, median about 16
+      hours. The announcement waited <b>28h55m</b>.</span></li>
+
+    <li><b>A widely-repeated puzzle, and the answer is the other machine.</b> Two January 2009
+      emails appear to have been logged by their recipient's server <i>before</i> the sender's
+      server stamped them &mdash; an impossible ordering of about 37.6 minutes, published as
+      unexplained in 2020. With only two machines in view, a difference tells you they disagree and
+      <b>nothing about which one is wrong</b>. A third clock settles it:
+      <div class="tw"><table>
+        <tr><th>pair</th><th>difference</th><th>evidence</th></tr>
+        <tr><td class="mono">anonymousspeech &harr; metzdowd</td><td><b>6&ndash;19 seconds</b></td><td>18 messages, 86 days &mdash; they agree</td></tr>
+        <tr><td class="mono">finney.org &harr; metzdowd</td><td><b>36:40&ndash;37:33</b></td><td>Jan 2009, from that host's <i>own</i> outbound list mail</td></tr>
+      </table></div>
+      <span class="sm">Four messages sent across one evening in August 2008 carry deltas spread by
+      <b>one second</b>. A batching queue's delay depends on when a message was sent; a clock offset
+      does not. So it is a clock &mdash; and it is the recipient's, running slow, not the sender's
+      running fast. The offset also <b>moves</b> (&asymp;25&nbsp;min in Feb 2008, &asymp;90&nbsp;min
+      in Aug 2008, &asymp;37&nbsp;min in Jan 2009), so it is only meaningful quoted with a date.</span></li>
+  </ul>
+
+  <p class="sm"><b>What this does not do.</b> A list fans one message out and copies the existing
+    relay lines verbatim into every envelope, so extra copies are tamper-evidence, not extra
+    witnesses &mdash; the arrival time rests on the list operator's clock. And none of these clocks
+    belongs to a person: <span class="mono">124.217.253.42</span> is a remailer's relay used by every
+    customer of that service, so its <span class="mono">+0800</span> offset is a server setting and
+    has never been evidence of anybody's timezone. <b>This dates a document. It identifies nobody.</b></p>
+</section>
+
+<section>
   <h2>What was searched, and is not there</h2>
   <p class="lead">The part that makes the rest usable. These are <b>searched negatives</b>, not
     untried routes — recorded so nobody repeats them.</p>
@@ -481,6 +530,51 @@ before   9 Nov 2008                                 — lacks a paragraph he had
       the judgment but are <b>not published</b>. The judgment quotes them extensively; that is what
       exists publicly.</li>
   </ul>
+</section>
+
+<section>
+  <h2>How these archives actually behave</h2>
+  <p class="lead">Every negative on this page depends on an instrument doing what it is assumed to
+    do. Three of them do not, in ways that silently manufacture wrong answers. Recorded because
+    anyone re-running this work will hit them.</p>
+
+  <ul class="sm">
+    <li><b>A wildcard plus a match-type is a literal asterisk.</b> Sending a CDX query both a
+      trailing <span class="mono">*</span> and <span class="mono">matchType=prefix</span> makes it
+      search for a URL <i>containing</i> an asterisk. It matches nothing and returns an empty list
+      &mdash; <b>indistinguishable from &ldquo;never captured&rdquo;</b>. A sweep of ours reported
+      zero captures for one of the most heavily archived pages on the web until a control pattern
+      caught it.</li>
+
+    <li><b>Both major indexes are keyed host-first.</b> The Wayback CDX index and Common Crawl's
+      public index run the same software and key URLs by host. A path-only pattern such as
+      <span class="mono">*/bitcoin.pdf</span> is therefore <b>not expressible</b>, and returns
+      nothing regardless of what was captured. <b>&ldquo;Did any host anywhere serve this file&rdquo;
+      is not an answerable question on either</b> &mdash; it needs a columnar index where the URL
+      path is a queryable column. The workable substitute is to enumerate candidate URLs from
+      documents that name them, and query each one.</li>
+
+    <li><b>Common Crawl's ARC-era digest includes the record separator.</b> Its index reports a
+      base32 SHA-1 that is computed over the response body <i>plus</i> a trailing newline, so it
+      <b>never</b> equals a clean hash of the file. Comparing the two produces a guaranteed
+      mismatch on every record. A 2012 capture of
+      <span class="mono">bitcoin.org/bitcoin.pdf</span> carries a digest matching nothing known;
+      fetching the record, stripping one byte, and hashing gives
+      <span class="mono">b1674191&hellip;</span> &mdash; the canonical file. <b>Any cross-system hash
+      comparison must be calibrated against a file you already hold.</b></li>
+
+    <li><b>And one that is simply gone.</b> CiteSeerX &mdash; an autonomous crawler that stored PDFs
+      from the open web with crawl metadata, and the obvious place to look for a dated early copy
+      &mdash; is decommissioned. <span class="mono">citeseerx.ist.psu.edu</span> now redirects to an
+      Internet Archive snapshot, and its search endpoints answer nothing.</li>
+  </ul>
+
+  <p class="sm"><b>A 404 is not always an absence.</b> On Common Crawl's index a 404 means
+    &ldquo;no rows for that URL&rdquo;, not &ldquo;no index&rdquo; &mdash; the 2008&ndash;2009
+    collection answers normally for <span class="mono">google.com</span> and
+    <span class="mono">wikipedia.org</span> while returning 404 for
+    <span class="mono">bitcoin.org</span>. <b>Before reading a 404 as evidence of absence, prove the
+    endpoint can return anything at all.</b></p>
 </section>
 
 <section>
