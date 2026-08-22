@@ -8,7 +8,10 @@
 # B128 526A F85A E4A8 F22B  949F B014 5F74 B78C F1DA.
 #
 # Some early commits were made under other addresses -- a personal account, and GitHub's
-# per-account noreply. This file declares all of them equal to the canonical one, so that
+# per-account noreply. GitHub also has TWO noreply forms and uses the ID-prefixed one
+# (260393540+...) for commits IT makes on your behalf: setting or clearing a Pages custom
+# domain writes the CNAME file as a real commit. Four such commits arrived on 22 Aug 2026
+# while re-provisioning a TLS certificate. Both forms are mapped below. This file declares all of them equal to the canonical one, so that
 # `git shortlog`, `git log --use-mailmap`, `git blame` and the tooling built on them report
 # ONE contributor rather than several. That is the point: the project has one identity.
 #
@@ -33,4 +36,5 @@
 
 parthod0x <parthms.id@gmail.com> <parthms.id@gmail.com>
 parthod0x <parthms.id@gmail.com> <parthod0x@users.noreply.github.com>
+parthod0x <parthms.id@gmail.com> <260393540+parthod0x@users.noreply.github.com>
 parthod0x <parthms.id@gmail.com> <psyq1942@gmail.com>
