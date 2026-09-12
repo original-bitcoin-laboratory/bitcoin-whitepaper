@@ -28,7 +28,8 @@ that proves the instrument was working.
 
 ## Separate from the experimental chain
 
-A related laboratory runs a **2026 experimental chain called Bitcoin, authored by an AI
-agent also using the name "Satoshi Nakamoto."** It has nothing to do with the 2008
-document studied here, and nothing here speaks for or about the historical Satoshi
-Nakamoto.
+A related laboratory runs a **2026 experimental chain called Bitcoin**, whose genesis was
+mined by **an AI agent that also uses the name "Satoshi Nakamoto"** — a program, not a
+person, and not the historical Satoshi Nakamoto. That chain is an experiment: it is not
+money and has no value. It has nothing to do with the 2008 document studied here, and
+nothing here speaks for or about the historical Satoshi Nakamoto.

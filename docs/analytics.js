@@ -15,8 +15,8 @@
  *   Asked in August 2026 to "track as much detail as possible", the tempting answer was a tool
  *   with per-visitor identity -- journeys, funnels, retention, returning-visitor counts. Every
  *   one of those needs to know that two events came from the SAME PERSON, and this project
- *   refuses to publish its own IPFS PeerID precisely because it would manufacture a link between
- *   an identity and a residential IP. Applying a weaker standard to READERS than to ourselves
+ *   refuses to publish its own node identifiers precisely because they would manufacture a link
+ *   between an identity and a network address. Applying a weaker standard to READERS than to ourselves
  *   would be indefensible.
  *
  *   So the expansion below adds only things that are true of a VISIT and never of a VISITOR:
@@ -27,7 +27,7 @@
  *   ⇒ If a question genuinely needs per-visitor identity, the honest move is to decide that
  *     openly and write down what changed -- not to let a tool choice make the decision quietly.
  *
- * PATH PREFIX: this site is the account's DEFAULT and reports bare paths ("/verify.html").
+ * PATH PREFIX: index.html prefixes every path with this host so the three sites do not merge.
  * satoshioncha.in and bitcoinwhitepaper.online prefix themselves with their host, so the three
  * do not merge in the dashboard. Do NOT add a prefix here: it would split every page's existing
  * history into a before and an after for no gain.

@@ -43,13 +43,12 @@ Everything published here is derived from **material already public**:
 report, it quotes a document its publisher chose to make public, and points you at that publisher's
 copy rather than serving its own.
 
-## The whitepaper PDFs served here
+## The whitepaper itself
 
-This repository serves copies of the Bitcoin whitepaper because the entire point of the work is that
-you can hash a file yourself and compare it. They are the same bytes distributed by `bitcoin.org` and
-mirrored on thousands of sites since 2009, and are reproduced here for verification and study. No
-authorship is claimed over them. If you hold rights in that document and would prefer they were
-linked rather than served, say so and they will be removed.
+This repository serves no copy of the whitepaper. It links to copies already published by others
+(bitcoin.org, the Internet Archive, SourceForge mirrors) and provides a script that re-derives the
+canonical bytes from the block chain, so that you can hash a file yourself and compare it. No
+authorship is claimed over the document.
 
 ## Named people
 
@@ -65,14 +64,14 @@ court, or a document they themselves published. This project:
   with its limits stated alongside.
 
 **If you are named here and want something corrected or removed, ask.** You do not need to explain
-why, and you will not be argued with. Corrections are made promptly and recorded openly.
+why. Requests are considered promptly and the outcome is recorded openly.
 
 ## Errors
 
 This project publishes its mistakes on purpose. Several published claims here have been wrong and
 were corrected in place, with the error and its cause described rather than quietly edited away —
-because a result is worth what its checking is worth. If you find an error, report it and it will be
-fixed and credited.
+because a result is worth what its checking is worth. If you find an error, report it; it will be
+reviewed and, where confirmed, corrected and credited.
 
 ## Licence
 

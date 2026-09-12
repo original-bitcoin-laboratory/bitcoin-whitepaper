@@ -89,8 +89,8 @@ file, which is why they identify even the versions nobody has. **The 11 November
 | contact address | — | `satoshi@vistomail.com` | unknown | `satoshin@gmx.com` |
 
 The reference numbering comes from Satoshi's 20 August 2008 email to Adam Back, quoted in
-**COPA v Wright [2024] EWHC 1198 (Ch)** at ¶661, in which he cites his own draft as
-`[5] A. Back, "Hashcash…"` and has never heard of b-money. Back told him about it the next day. If
+**COPA v Wright [2024] EWHC 1198 (Ch)** at ¶661, in which they cite their own draft as
+`[5] A. Back, "Hashcash…"` and have never heard of b-money. Back told them about it the next day. If
 b-money then went in as `[1]`, Hashcash must shift to `[6]` — **and it does, in both surviving
 files.** A prediction from a court exhibit, confirmed against files from an unrelated source.
 
@@ -143,14 +143,14 @@ by a server the author did not run. Run `verify/wayback_orig_headers.py`.
 
 ```
 after    Wei Dai's reply to the 22 Aug 2008 email   — it carries the 1998 b-money citation
-                                                      Satoshi did not have when he wrote, guessing "(2006?)"
-before   9 Nov 2008                                 — it lacks the Section 6 fee paragraph he
+                                                      Satoshi did not have when they wrote, guessing "(2006?)"
+before   9 Nov 2008                                 — it lacks the Section 6 fee paragraph they
                                                       proposed on the mailing list that day
          the file's own date, 3 Oct 2008, sits inside that window and does none of the work
 ```
 
 A backdated clock can write any creation date. It cannot put a citation into a document before its
-author learned it, nor remove a paragraph he had not yet written.
+author learned it, nor remove a paragraph they had not yet written.
 
 ## What is *not* established
 
@@ -173,8 +173,8 @@ Recorded so nobody repeats them:
   Archive's first capture of `bitcoin.org/bitcoin.pdf` is 2010-07-04; Common Crawl's 2008–2009 crawl
   ran during the window and never visited the domain.
 - **The August draft** — its link has 20 Wayback captures, every one a 404/302/406, earliest 2020.
-  Wei Dai, Adam Back and Gregory Maxwell were asked years ago and do not have copies; Hal Finney was
-  asked and died in August 2014.
+  No surviving copy is known; the people who received it in 2008 have not produced one, and Hal
+  Finney died in August 2014.
 - **The December 2008 SourceForge upload** — replaced 2009-03-24; a Wayback gap for that project from
   January to September 2009 means its size was never captured.
 - **The cypherpunks cross-post** (1 Nov 2008) — that list node ran 2005–2013 without public archives.
@@ -186,10 +186,10 @@ Recorded so nobody repeats them:
   `archived via web.archive.org`. **When two archives agree on the earliest date, check whether one is
   quoting the other.**
 
-**Corrected — this list used to say the COPA expert reports were "not published".** They are. All six
-of Patrick Madden's reports and his 48 appendices are publicly available at
-[bitcoindefense.org](https://bitcoindefense.org), and the hashes and text tests above are drawn from
-them. **And Madden ran this search too**: at Appendix PM3 §§53–56 he records that the disclosure
+**Corrected — this list used to say the COPA expert reports were "not published".** The six
+expert reports of Patrick Madden are publicly available at
+[bitcoindefense.org](https://bitcoindefense.org). His appendices, including PM3, are not published
+there; the hashes and text tests above come from a publicly published dataset of the trial bundle. **And Madden ran this search too**: at Appendix PM3 §§53–56 he records that the disclosure
 dataset, Google, and the Internet Archive's holdings of bitcoin.org produced no other instance of the
 11 November document — an independent negative, given under a duty to the court, that agrees with
 ours.
@@ -203,7 +203,7 @@ ours.
 - **[satoshioncha.in](https://satoshioncha.in)** — Satoshi On-Chain: the verifiable on-chain and
   off-chain footprint of the original Satoshi.
 
-Three domains, three remits: **the code**, **the identity**, **the document**.
+Three domains, three remits: **the code**, **the footprint**, **the document**.
 
 MIT © 2026 [parthod0x](https://github.com/parthod0x) · not money, not financial advice · no warranty
 

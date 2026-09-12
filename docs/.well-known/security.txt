@@ -5,9 +5,9 @@
 # of what is published, not a running service.
 #
 # The most useful report is therefore: "an artifact you published does not verify."
-# Every release is signed and Bitcoin-anchored, and the instructions to check that
-# are published alongside it. If a signature, hash, or timestamp does not check out,
-# that is a defect and will be corrected in the open rather than argued about.
+# Every hash published here can be re-derived with the scripts in the repository's
+# verify/ directory. If a hash or a stated figure does not reproduce, that is a
+# defect and will be corrected in the open rather than argued about.
 
 Contact: mailto:parthms.id@gmail.com
 Expires: 2027-08-11T00:00:00.000Z

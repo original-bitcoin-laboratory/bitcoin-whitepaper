@@ -100,7 +100,7 @@
     ways you can check yourself in seconds. <b>Two are held, one is lost, and one exists only in a
     court record.</b> This page records what each is, how to identify any copy from its contents
     alone, and — the part that matters most — <b>exactly where proof ends and inference begins</b>.</p>
-  <p class="thesis">Every claim here links to a public source. Nothing asks you to trust us.</p>
+  <p class="thesis">Every claim here names its public source. Nothing asks you to trust us.</p>
 </header>
 
 <section>
@@ -127,7 +127,7 @@
     <tr>
       <td><b>11 November 2008</b><br><span class="mono sm">≈184,300 bytes<br>e6cc7c95…48e50a9</span></td>
       <td><span class="tag t-gone">not held</span></td>
-      <td class="v-gone">A control copy in <b>COPA v Wright</b>, appearing under three names for one
+      <td class="v-gone">An exhibit in <b>COPA v Wright</b>, appearing under three names for one
         file: Rosendahl's <b>Exhibit AR3</b>, Bohm's <b>Exhibit NB1</b>, Madden's <b>BWP-NB1</b>.
         <b>Two days after Satoshi proposed transaction fees on the mailing list — and it carries
         them.</b>
@@ -165,8 +165,8 @@
 <pre>                        bytes     sha256          /CreationDate            /ModDate
 the re-save           188,867   <b>f5aa8f4b…</b>   D:20081003134958-07'00'  <b>D:20240330175340+10'00'</b>
 the genuine draft     <b>183,697</b>   <b>427c63b3…</b>   D:20081003134958-07'00'  (none)</pre>
-    <p class="sm">Three independent tells: an added <span class="mono">/ModDate</span> at an
-      Australian offset; a size <b>closer to the canonical's 184,292</b> than the real draft's, so a
+    <p class="sm">Three independent tells: an added <span class="mono">/ModDate</span> at a
+      +10:00 offset; a size <b>closer to the canonical's 184,292</b> than the real draft's, so a
       size check can pass it; and the structural giveaway — a PDF writer sets the two halves of
       <span class="mono">/ID</span> equal on first save and never again. <b>They are equal in the
       genuine draft and unequal in the re-save.</b> Its text is the October text (no fee paragraph),
@@ -198,9 +198,9 @@ the genuine draft     <b>183,697</b>   <b>427c63b3…</b>   D:20081003134958-07'
 
   <div class="card">
     <h3>Where the reference numbers come from</h3>
-    <p class="sm">On <b>20 August 2008</b> Satoshi emailed Adam Back to check a citation, quoting his
-      own draft: <code>[5] A. Back, "Hashcash — a denial of service counter-measure"</code>. He had
-      never heard of b-money. Back replied the next day pointing him to it, and Satoshi answered:
+    <p class="sm">On <b>20 August 2008</b> Satoshi emailed Adam Back to check a citation, quoting their
+      own draft: <code>[5] A. Back, "Hashcash — a denial of service counter-measure"</code>. They had
+      never heard of b-money. Back replied the next day pointing them to it, and Satoshi answered:
       <i>“I wasn't aware of the b-money page… I'll e-mail him to confirm the year of publication so I
       can credit him.”</i></p>
     <p class="sm">If b-money then went in as <code>[1]</code>, every later reference must shift down
@@ -220,7 +220,7 @@ the genuine draft     <b>183,697</b>   <b>427c63b3…</b>   D:20081003134958-07'
   <h3>1 · Carve the canonical paper out of the block chain</h3>
   <p class="sm">It was embedded in mainnet transaction
     <a href="https://blockstream.info/tx/54e48e5f5c656b26c3bca14a8c95aa583d07ebe84dde3b7dd4a78f4e4186e713"><span class="mono">54e48e5f…</span></a>
-    across 945 bare-multisig outputs whose “public keys” are file bytes.</p>
+    across 946 bare-multisig outputs (945 carrying three 65-byte pushes, one carrying the 33-byte tail) whose “public keys” are file bytes.</p>
 <pre>python verify/whitepaper_from_chain.py out.pdf
 
 block   230009        2013-04-06 20:28:10 UTC
@@ -279,7 +279,7 @@ byte-identical: <b>6 of 7</b></pre>
       draft reads <code>[1] W. Dai, "b-money," … 1998.</code> — so it postdates Dai's reply.</p>
   </div>
   <div class="card">
-    <h3>The late bound — a paragraph he had not yet written</h3>
+    <h3>The late bound — a paragraph they had not yet written</h3>
     <p class="sm">The draft has <b>no Section 6 transaction-fee paragraph</b>. Satoshi proposed
       transaction fees
       <a href="https://www.metzdowd.com/pipermail/cryptography/2008-November/014842.html">on the
@@ -288,10 +288,10 @@ byte-identical: <b>6 of 7</b></pre>
       system I recently posted.”</i></p>
   </div>
 <pre>after    Wei Dai's reply to the 22 Aug 2008 email   — holds a fact Satoshi lacked
-before   9 Nov 2008                                 — lacks a paragraph he hadn't written
+before   9 Nov 2008                                 — lacks a paragraph they hadn't written
          <b>the file's own date, 3 Oct 2008, sits inside and does none of the work</b></pre>
   <p class="sm">A forger cannot put a citation into a document before its author learned it, nor
-    remove a paragraph he had not yet written. Neither is reachable with a backdated clock.</p>
+    remove a paragraph they had not yet written. Neither is reachable with a backdated clock.</p>
 </section>
 
 <section>
@@ -304,7 +304,7 @@ before   9 Nov 2008                                 — lacks a paragraph he had
     <tr><td class="mono">2015-01-25</td><td>Posts the hash <span class="mono">427c63b3…982faa</span>. Another member replies that <i>“the one everyone else has”</i> is <span class="mono">b1674191…</span> — the community had only the canonical file</td></tr>
     <tr><td class="mono">2015-01-30</td><td>A named recipient receives it by anonymous remailer in ~26 parts, reassembles and <b>republishes</b> it — same hash</td></tr>
     <tr><td class="mono">2015-02-14</td><td>The Internet Archive <a href="https://web.archive.org/web/20150214024140if_/https://www.blacksheepatorenco.com/bitcoin.html">captures that page</a>, hash and all</td></tr>
-    <tr><td class="mono">2017-08-17</td><td><b>Ray Dillinger</b> — who argued with Satoshi in the original November 2008 thread — confirms: <i>“Yes. The hash matches. That's definitely it.”</i></td></tr>
+    <tr><td class="mono">2017-08-17</td><td><b>Ray Dillinger</b> — who took part in the original November 2008 thread — confirms: <i>“Yes. The hash matches. That's definitely it.”</i></td></tr>
   </table></div>
   <p class="sm">So the hash sits in <b>two independent third-party records from early 2015</b>, five
     years before the archive.org copy existed, and is confirmed by a participant from 2008. And the
@@ -404,19 +404,19 @@ before   9 Nov 2008                                 — lacks a paragraph he had
     <tr><th>date</th><th>event</th><th>what dates it</th></tr>
     <tr><td class="mono">2008-08-18</td><td>bitcoin.org registered</td><td>RDAP, still live. <b>Registrant not recorded</b>; the attribution to Satoshi is the court's agreed background (¶23.1), not a registry fact</td></tr>
     <tr><td class="mono"><b>2008-08-20</b></td><td><b>Satoshi emails Adam Back</b> — the earliest known Satoshi communication</td><td>trial exhibit <span class="mono">{L3/190}</span>, quoted at ¶661</td></tr>
-    <tr><td class="mono">2008-08-21</td><td>Back replies, pointing him to b-money</td><td><span class="mono">{L3/194}</span>, ¶663</td></tr>
+    <tr><td class="mono">2008-08-21</td><td>Back replies, pointing them to b-money</td><td><span class="mono">{L3/194}</span>, ¶663</td></tr>
     <tr><td class="mono">2008-08-22</td><td>Satoshi emails Wei Dai for the b-money year</td><td>published by Wei Dai; quoted in <i>The Sunday Times</i>, 2014</td></tr>
     <tr><td class="mono">2008-10-03</td><td>the surviving draft's creation date</td><td>the file's own metadata — corroborative only</td></tr>
     <tr><td class="mono">2008-10-05</td><td><span class="mono">nakamoto2</span> SourceForge account created</td><td>archived user page (server-set) <b>and</b> ¶23.3</td></tr>
     <tr><td class="mono">2008-10-31</td><td><b>the paper announced</b>, abstract quoted inline</td><td><a href="https://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html">metzdowd archive</a>, in server-recorded arrival order</td></tr>
-    <tr><td class="mono">2008-11-08</td><td>Satoshi quotes his own Section 4 on the list</td><td><a href="https://www.metzdowd.com/pipermail/cryptography/2008-November/014831.html">msg 014831</a> — 41 words, identical to the shipped PDF</td></tr>
+    <tr><td class="mono">2008-11-08</td><td>Satoshi quotes their own Section 4 on the list</td><td><a href="https://www.metzdowd.com/pipermail/cryptography/2008-November/014831.html">msg 014831</a> — 41 words, identical to the shipped PDF</td></tr>
     <tr><td class="mono">2008-11-09</td><td><b>transaction fees proposed</b> — the draft's late bound</td><td><a href="https://www.metzdowd.com/pipermail/cryptography/2008-November/014842.html">msg 014842</a></td></tr>
     <tr><td class="mono"><b>2008-11-11</b></td><td><b>a fourth version is created</b>, 08:00:34 at UTC−08:00 — <b>carrying the new transaction-fee text</b></td><td>Bohm §19 for the file; <b>Appendix PM3 §§42–52</b> for its hashes and its unique text. <b>Still not public</b>; we do not hold it, but it can now be identified on sight</td></tr>
-    <tr><td class="mono">2008-11-17</td><td><b>the list moderator ends the discussion</b>, 4h 19m after Satoshi's last post</td><td><a href="https://www.metzdowd.com/pipermail/cryptography/2008-November/">metzdowd archive</a> — <i>“ADMIN: end of bitcoin discussion for now.”</i> The 52-day silence that follows is <b>a moderated list being moderated</b>, not a withdrawal</td></tr>
+    <tr><td class="mono">2008-11-17</td><td><b>the list moderator ends the discussion</b>, 4h 19m after Satoshi's last post</td><td><a href="https://www.metzdowd.com/pipermail/cryptography/2008-November/">metzdowd archive</a> — <i>“ADMIN: end of bitcoin discussion for now.”</i> The 52-day silence that follows is consistent with <b>a moderated list being moderated</b>; it need not be read as a withdrawal</td></tr>
     <tr><td class="mono">2008-12-08/09</td><td>the paper uploaded to SourceForge</td><td>¶23.5. <b>That file is not preserved</b> and its size was never captured</td></tr>
     <tr><td class="mono">2009-01-03</td><td>the genesis block</td><td><b>proof-of-work</b> — the only unforgeable class here</td></tr>
     <tr><td class="mono"><b>2009-01-18</b></td><td><b>a member of the public downloads the paper</b>, 13:27 GMT — and it is the <b>11 November version</b></td><td>Bohm §19. He read the cryptography list, downloaded it, and still had the file in 2023. <b>This is what was on offer to the public in January 2009</b></td></tr>
-    <tr><td class="mono">2009-02-01</td><td>Satoshi sends Bohm <b>100 BTC</b>, unprompted</td><td>Bohm §15, under a statement of truth. <b>On-chain, in principle</b> — blocks ≈2406–2600; we have not yet located it</td></tr>
+    <tr><td class="mono">2009-02-01</td><td>Satoshi sends Bohm <b>100 BTC</b>, unprompted</td><td>Bohm §15, under a statement of truth. <b>On-chain, in principle</b> — blocks ≈2406–2600 by date; not identified on-chain by this project</td></tr>
     <tr><td class="mono">2009-03-24</td><td>the canonical file created, and released to SourceForge <b>the same day</b></td><td>the file's metadata <b>and</b> SourceForge's own activity feed (“176 days ago”, captured 2009-09-16) <b>and</b> ¶23.9</td></tr>
     <tr><td class="mono">2009-11-28</td><td><b>earliest archived bytes</b> of the canonical</td><td><a href="https://web.archive.org/web/20091128185352if_/http://voxel.dl.sourceforge.net:80/project/bitcoin/Research%20Paper/bitcoin.pdf/bitcoin.pdf">SourceForge mirror</a> — an actual archived PDF. Download it; it hashes to <span class="mono">b1674191…</span>. <b>This is the capture the court's expert verified.</b></td></tr>
     <tr><td class="mono">2013-04-06</td><td>the canonical embedded in <b>block 230009</b></td><td>proof-of-work</td></tr>
@@ -494,11 +494,11 @@ before   9 Nov 2008                                 — lacks a paragraph he had
       out to be quoting the other. The two national archives were checked against that failure mode
       and pass it: <b>zero exact-second timestamp collisions</b> with the Internet Archive. Both hold
       the canonical, byte-verified by fetching and hashing.</span></li>
-    <li><b>Any commitment by Satoshi on the block chain.</b> He knew exactly how — on
-      <b>9 December 2010</b> he wrote out the transaction himself
+    <li><b>Any commitment by Satoshi on the block chain.</b> The method was known to them — on
+      <b>9 December 2010</b> they wrote out the transaction themselves
       (<span class="mono">txout: 0.00 &lt;appid, hash&gt; OP_CHECKSIG</span>) and endorsed Hal Finney's
-      simpler method of converting a file's hash to an address and paying it. <b>He used neither.</b>
-      Every on-chain channel has been scanned across his entire active era, for all known versions, in
+      simpler method of converting a file's hash to an address and paying it. <b>They used neither.</b>
+      Every on-chain channel has been scanned across their entire active era, for all known versions, in
       both byte orders, under MD5 / SHA-1 / SHA-256 / double-SHA-256 / HASH160:
       <div class="tw"><table>
         <tr><th>channel</th><th>scope</th><th>result</th></tr>
@@ -522,8 +522,8 @@ before   9 Nov 2008                                 — lacks a paragraph he had
       a byte size, a download count, and no payload. The archive could only ever have recorded a
       <i>description</i> of the draft. Its link — <span class="mono">upload.ae/file/6157/ecash-pdf.html</span>
       — has 20 Wayback captures, <b>every one a 404, 302 or 406</b>, earliest 2020: already dead when
-      first crawled. The three obvious holders (Wei Dai, Adam Back, Gregory Maxwell) were asked years
-      ago and <b>do not have copies</b>; Hal Finney was asked and died in August 2014.</li>
+      first crawled. No surviving copy is known: the people who received it in 2008 have not produced
+      one, and Hal Finney died in August 2014.</li>
     <li><b>The December 2008 SourceForge file.</b> Replaced on 2009-03-24. Its size was never captured
       — there is a Wayback gap for that project from January to September 2009, and the file-detail
       page is the only page carrying a size. <b>Not recoverable by machine</b> — and it was downloaded <b>once</b>, see below.</li>
@@ -533,9 +533,10 @@ before   9 Nov 2008                                 — lacks a paragraph he had
       its subject matter. That node ran 2005–2013
       <b>without public archives</b>; the surviving cypherpunks archives cover the 1990s and 2013
       onward. The second list it was cross-posted to is an empty stub — one subscribe confirmation.</li>
-    <li><b>The COPA expert reports</b> (Madden, Rosendahl) are referenced by exhibit number throughout
-      the judgment but are <b>not published</b>. The judgment quotes them extensively; that is what
-      exists publicly.</li>
+    <li><b>The COPA expert reports.</b> Patrick Madden's six expert reports are published at
+      bitcoindefense.org. His appendices, including PM3, are not published there; the extracted text
+      used here comes from a publicly published dataset of the trial bundle, and the judgment itself
+      quotes the reports extensively.</li>
   </ul>
 </section>
 
@@ -656,15 +657,15 @@ before   9 Nov 2008                                 — lacks a paragraph he had
     with a key established as the author’s independently of the claim. Three things stand in the
     way, and the third is the one usually missed.</p>
   <ul class="sm">
-    <li><b>No such signature exists.</b> The keys we can call Satoshi’s — by the convention that
-      the genesis coinbase key’s holder <i>is</i> Satoshi — have signed exactly two things, ever:
-      the transaction that paid Hal Finney 10 BTC in block 170, and the one that spent its change in
-      block 181. <b>Both are transaction signatures.</b> A Bitcoin transaction signature covers a
+    <li><b>No such signature exists.</b> No message signature from any key attributed to Satoshi is
+      known. The early coinbase keys attributed to Satoshi by convention — an attribution, not a
+      proof — have produced only transaction signatures: block 9’s key spending to Hal Finney in
+      block 170, for example, and the spends that followed. <b>Those are transaction signatures.</b> A Bitcoin transaction signature covers a
       hash of the transaction; a message signature covers a hash of the message. For one to double
       as the other you would need a second-preimage collision in SHA-256 — which is the thing
       SHA-256 exists to prevent.</li>
     <li><b>Nobody but the key-holder can create one.</b> That is not a research obstacle. It is what
-      a signature scheme <i>is</i>. Those keys have been dormant since 2011.</li>
+      a signature scheme <i>is</i>.</li>
     <li><b>And even a signature would not prove authorship.</b> If the key-holder appeared tomorrow
       and signed the canonical paper, it would establish one thing: <i>the holder of this key
       endorses this document.</i> Not who composed it. <b>People sign documents they did not write —
@@ -677,7 +678,7 @@ before   9 Nov 2008                                 — lacks a paragraph he had
   <div class="tw"><table>
     <tr><th>standard</th><th>status</th></tr>
     <tr><td>a signature by a known-Satoshi key</td><td><b>impossible</b> — see above</td></tr>
-    <tr><td>an on-chain commitment by the author</td><td><b>none exists</b> — five channels, all scanned, all controlled</td></tr>
+    <tr><td>an on-chain commitment by the author</td><td><b>none found</b> — five channels scanned with passing controls, two of them to block 150,000</td></tr>
     <tr><td>a hash published by a 2009 server</td><td><b>yes</b> — SourceForge’s own file API published <span class="mono">d56d71ec…c042</span> for <span class="mono">bitcoin.pdf</span>, and it matches</td></tr>
     <tr><td>independent custodians holding identical bytes</td><td><b>yes</b> — SourceForge, the Internet Archive, Arquivo.pt, Vefsafn.is, and the block chain</td></tr>
     <tr><td>forensic examination in a contested court</td><td><b>yes</b> — used as a control copy in COPA v Wright</td></tr>
@@ -685,8 +686,8 @@ before   9 Nov 2008                                 — lacks a paragraph he had
   </table></div>
 
   <p><b>The canonical whitepaper is among the best-attested documents of its era. It is not, and
-    cannot become, a verified-<i>authored</i> one.</b> Anyone offering you cryptographic proof that
-    Satoshi wrote a particular file is selling something the mathematics does not contain.</p>
+    cannot become, a verified-<i>authored</i> one.</b> Cryptographic proof that
+    Satoshi wrote a particular file is not something the mathematics can supply.</p>
 </section>
 
 <section>
@@ -719,7 +720,7 @@ before   9 Nov 2008                                 — lacks a paragraph he had
   <p><span class="k">classes</span> &nbsp;proof-of-work &gt; server-recorded &gt; adjudicated &gt; archive-position &gt; self-asserted</p>
   <p><span class="k">sources</span> &nbsp;metzdowd.com pipermail · Internet Archive · SourceForge · the block chain · [2024] EWHC 1198 (Ch)</p>
   <p style="margin-top:12px"><span class="k">related</span> &nbsp;<a href="https://bitcoin-lab.org">Original Bitcoin Laboratory</a> — executable reconstruction of the earliest Bitcoin ·
-    <a href="https://satoshioncha.in">Satoshi On-Chain</a> — the verifiable footprint of the original Satoshi</p>
+    <a href="https://satoshioncha.in">Satoshi On-Chain</a> — the verifiable on-chain footprint of Satoshi Nakamoto</p>
   <p class="flegal">MIT © 2026 <a href="https://github.com/parthod0x">parthod0x</a> ·
     <a href="https://github.com/original-bitcoin-laboratory/bitcoin-whitepaper">source</a> ·
     not money, not financial advice · no warranty</p>
