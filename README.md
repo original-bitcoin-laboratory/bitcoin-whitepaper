@@ -41,7 +41,7 @@ hours. The file itself is not public — but a great deal about it is:
   absent from both versions we hold. Satoshi proposed fees on the list on 9 November 2008; the text
   was in the paper **two days later**, and was reworded again for March 2009.
 
-### ★ If you have an old copy, you can check it by reading — no hashing required
+### If you have an old copy, you can check it by reading — no hashing required
 
 Madden's Appendix PM3 §52 identifies three sentences that appear in the 11 November file and in
 **neither** of the two versions that survive in public. We searched both held files directly and
@@ -54,7 +54,7 @@ confirmed all three are absent:
 ```
 
 **Open any old `bitcoin.pdf`, press Ctrl-F, and search for the first one.** If it is there, you have
-the version nobody has — please get in touch. The canonical March 2009 text says something close but
+the version nobody has — please open an issue on the repository. The canonical March 2009 text says something close but
 not the same (*"can also be funded"*, *"if the output value … is less than"*); the October 2008 draft
 has no transaction-fee text at all.
 
@@ -194,7 +194,7 @@ Recorded so nobody repeats them:
 **Corrected — this list used to say the COPA expert reports were "not published".** The six
 expert reports of Patrick Madden are publicly available at
 [bitcoindefense.org](https://bitcoindefense.org). His appendices, including PM3, are not published
-there; the hashes and text tests above come from a publicly published dataset of the trial bundle. **And Madden ran this search too**: at Appendix PM3 §§53–56 he records that the disclosure
+there; the hashes and text tests above come from a copy of the trial bundle that has circulated publicly; this project does not re-host or link it, and checked before relying on it that its embedded identifiers for the two files we hold match byte-for-byte. **And Madden ran this search too**: at Appendix PM3 §§53–56 he records that the disclosure
 dataset, Google, and the Internet Archive's holdings of bitcoin.org produced no other instance of the
 11 November document — an independent negative, given under a duty to the court, that agrees with
 ours.
