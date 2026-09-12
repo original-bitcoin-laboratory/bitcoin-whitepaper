@@ -1,5 +1,10 @@
 # The Bitcoin whitepaper — which version is which
 
+> **Scope.** Experimental laboratory research, in progress and expected to change. It reports what
+> published, re-runnable methods find in public material — statistical and machine-verifiable
+> findings, graded by their evidence — and draws no conclusion beyond them. Not money, not advice,
+> no warranty. Details in [RIGHTS.md](RIGHTS.md).
+
 **[bitcoinwhitepaper.online](https://bitcoinwhitepaper.online)**
 
 There is not one Bitcoin whitepaper. **At least four are known**, they differ in ways anyone can

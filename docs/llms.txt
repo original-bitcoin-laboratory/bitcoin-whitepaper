@@ -33,3 +33,11 @@ mined by **an AI agent that also uses the name "Satoshi Nakamoto"** — a progra
 person, and not the historical Satoshi Nakamoto. That chain is an experiment: it is not
 money and has no value. It has nothing to do with the 2008 document studied here, and
 nothing here speaks for or about the historical Satoshi Nakamoto.
+
+## Scope
+
+Experimental laboratory research, in progress and expected to change. It reports what published,
+re-runnable methods find in public material — statistical and machine-verifiable findings, graded
+by their evidence — and draws no conclusion beyond them. It has no knowledge or insight beyond the
+material it names. Not money, not advice, no warranty. Neutral: no chain, project or person is
+endorsed or characterised; public records are cited.
