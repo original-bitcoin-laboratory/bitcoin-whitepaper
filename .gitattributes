@@ -11,7 +11,7 @@
 # Hence: translate nothing. The repo's bytes are the repo's bytes.
 * -text
 
-# NOTE, deliberately different from the `genesis` repo. That one additionally pins
+# NOTE, deliberately different from `original-bitcoin-laboratory/genesis`. That one additionally pins
 #
 #     *.py text eol=lf
 #

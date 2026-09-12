@@ -97,10 +97,10 @@
   <p class="eyebrow">Document provenance · reproducible · neutral</p>
   <h1>The Bitcoin whitepaper: which version is which</h1>
   <p class="thesis">There is not one Bitcoin whitepaper. At least four are known, and they differ in
-    ways you can check yourself in seconds. <b>Two are held, one is lost, and one exists only in a
+    ways you can check yourself in seconds. <b>Two are held, one is lost, and one is known only through a
     court record.</b> This page records what each is, how to identify any copy from its contents
     alone, and — the part that matters most — <b>exactly where proof ends and inference begins</b>.</p>
-  <p class="thesis">Every claim here names its public source. Nothing asks you to trust us.</p>
+  <p class="thesis">Every claim here names its public source.</p>
 </header>
 
 <section>
@@ -122,7 +122,7 @@
         <b>word for word</b>. Served byte-identically by
         <a href="https://gwern.net/doc/bitcoin/20081003-nakamoto-bitcoindraft.pdf">gwern.net</a> and
         <a href="https://archive.org/details/bitcoin-a-peer-to-peer-electronic-cash-system">archive.org</a>.
-        Used as a <b>forensic control copy in the High&nbsp;Court</b>.</td>
+        Used as a <b>control copy by the court's forensic document examiner in COPA v Wright</b>.</td>
     </tr>
     <tr>
       <td><b>11 November 2008</b><br><span class="mono sm">≈184,300 bytes<br>e6cc7c95…48e50a9</span></td>
@@ -179,12 +179,11 @@ the genuine draft     <b>183,697</b>   <b>427c63b3…</b>   D:20081003134958-07'
 
 <section>
   <h2>Identify any copy in ten seconds</h2>
-  <p class="lead">Six tests, all plain text searches. <b>Four of them come from Satoshi's own words in
+  <p class="lead">Seven tests, all plain-text searches. <b>Four of them come from Satoshi's own words in
     dated records</b> rather than from any file — which is why they can identify even the versions
-    nobody has. <b>The August 2008 column is empty on purpose</b> — that version is lost, and those cells are
-    what a surfacing copy would have to fill in. The 11 November column was empty until its analysis
-    became available; the entries below now come from <b>Appendix PM3</b>, not from the file, which
-    is still in no public hands.</p>
+    not in public hands. <b>The 11 November column is mostly blank on purpose</b>: the file is in no public hands, and its
+    cells marked unknown are what a surfacing copy would fill in. The two entries it does carry come from
+    <b>Appendix PM3</b>, not from the file.</p>
   <div class="tw wide"><table>
     <tr><th>test</th><th>Aug 2008 (lost)</th><th>3 Oct 2008</th><th>11 Nov 2008 (not held)</th><th>24 Mar 2009</th></tr>
     <tr><td><b>title</b></td><td class="v-gone">Electronic Cash Without a Trusted Third Party</td><td>Bitcoin: A Peer-to-Peer…</td><td>Bitcoin: A Peer-to-Peer…</td><td>Bitcoin: A Peer-to-Peer…</td></tr>
@@ -322,7 +321,7 @@ before   9 Nov 2008                                 — lacks a paragraph they h
   <div class="quote">“After significant scrutiny and verification via third party sources, he
     identified {ID_000226} and {ID_000865} as suitable <b>‘control’ copies</b> of versions of the
     Bitcoin White Paper. <b>{ID_000226} has a creation date of 3 October 2008.</b>”
-    <cite>the 3 October draft, used as a forensic baseline</cite></div>
+    <cite>the 3 October draft, used as a control copy</cite></div>
   <div class="quote">“The White Paper was <b>not written in LaTeX but in OpenOffice 2.4</b> (a finding
     consistent with the metadata of the public Bitcoin White Paper versions).”
     <cite>¶303.1 — the Joint Statement of <i>both parties'</i> experts</cite></div>
@@ -338,8 +337,7 @@ before   9 Nov 2008                                 — lacks a paragraph they h
     a web server the author did not run, and an expert cross-examined on his work — all naming the
     same instant and the same bytes.</p>
   <p class="sm">The judgment also records that <b>OpenOffice 2.4.0 was released on 26 March 2008</b>
-    (¶271.1) — a floor on any document claiming that toolchain — and states the forgery method
-    plainly (¶123): a file could be made <i>“by downloading and running that software on a computer
+    (¶271.1) — a floor on any document claiming that toolchain — and describes (¶123) how such a file could be made: a file could be made <i>“by downloading and running that software on a computer
     (or virtual computer) with a <b>backdated clock</b>.”</i> Which is precisely why the dating above
     uses content rather than metadata.</p>
 </section>
@@ -381,8 +379,8 @@ before   9 Nov 2008                                 — lacks a paragraph they h
 <b>11 Nov 2008   the fee text is in the paper — first wording        ← two days later</b>
 24 Mar 2009   the same block reworded to the form everyone knows</pre>
     <p class="sm">This page previously called that the most interesting open question about the
-      paper's text. It is now answered — <b>not from the file, which nobody public holds, but from a
-      forensic analysis of it filed in court</b>.</p>
+      paper's text. It is now answered — <b>not from the file, which nobody public holds, but from an
+      expert analysis of it filed in court</b>.</p>
   </div>
 
   <p class="sm"><b>Provenance and limits.</b> These figures come from Appendix PM3 §§41–58, obtained
@@ -416,7 +414,7 @@ before   9 Nov 2008                                 — lacks a paragraph they h
     <tr><td class="mono">2008-12-08/09</td><td>the paper uploaded to SourceForge</td><td>¶23.5. <b>That file is not preserved</b> and its size was never captured</td></tr>
     <tr><td class="mono">2009-01-03</td><td>the genesis block</td><td><b>proof-of-work</b> — the only unforgeable class here</td></tr>
     <tr><td class="mono"><b>2009-01-18</b></td><td><b>a member of the public downloads the paper</b>, 13:27 GMT — and it is the <b>11 November version</b></td><td>Bohm §19. He read the cryptography list, downloaded it, and still had the file in 2023. <b>This is what was on offer to the public in January 2009</b></td></tr>
-    <tr><td class="mono">2009-02-01</td><td>Satoshi sends Bohm <b>100 BTC</b>, unprompted</td><td>Bohm §15, under a statement of truth. <b>On-chain, in principle</b> — blocks ≈2406–2600 by date; not identified on-chain by this project</td></tr>
+    <tr><td class="mono">2009-02-01</td><td>Satoshi sends Bohm <b>100 BTC</b> — unprompted, on Bohm's account (§15)</td><td>Bohm §15, under a statement of truth. <b>On-chain, in principle</b> — blocks ≈2406–2600 by date; not identified on-chain by this project</td></tr>
     <tr><td class="mono">2009-03-24</td><td>the canonical file created, and released to SourceForge <b>the same day</b></td><td>the file's metadata <b>and</b> SourceForge's own activity feed (“176 days ago”, captured 2009-09-16) <b>and</b> ¶23.9</td></tr>
     <tr><td class="mono">2009-11-28</td><td><b>earliest archived bytes</b> of the canonical</td><td><a href="https://web.archive.org/web/20091128185352if_/http://voxel.dl.sourceforge.net:80/project/bitcoin/Research%20Paper/bitcoin.pdf/bitcoin.pdf">SourceForge mirror</a> — an actual archived PDF. Download it; it hashes to <span class="mono">b1674191…</span>. <b>This is the capture the court's expert verified.</b></td></tr>
     <tr><td class="mono">2013-04-06</td><td>the canonical embedded in <b>block 230009</b></td><td>proof-of-work</td></tr>
@@ -649,7 +647,7 @@ before   9 Nov 2008                                 — lacks a paragraph they h
     <tr><td><b>which file</b></td><td>which bytes did the author publish, and when?</td>
         <td><b>Yes, in principle.</b> It is a search problem, and most of this page is its answer</td></tr>
     <tr><td><b>who wrote it</b></td><td>is this text that person’s composition?</td>
-        <td><b>No. Not now, and not by any future discovery</b></td></tr>
+        <td><b>No — and not for want of evidence; see below</b></td></tr>
   </table></div>
 
   <h3>Why the second one is closed</h3>
@@ -673,20 +671,19 @@ before   9 Nov 2008                                 — lacks a paragraph they h
       document, and no amount of cryptography makes it one.</li>
   </ul>
 
-  <p><b>So the honest ladder looks like this</b>, and the canonical paper sits near the top of what
+  <p><b>The standards available, and where the canonical file stands against each</b> — near the top of what
     is achievable rather than short of something that was ever available:</p>
   <div class="tw"><table>
     <tr><th>standard</th><th>status</th></tr>
     <tr><td>a signature by a known-Satoshi key</td><td><b>impossible</b> — see above</td></tr>
     <tr><td>an on-chain commitment by the author</td><td><b>none found</b> — five channels scanned with passing controls, two of them to block 150,000</td></tr>
-    <tr><td>a hash published by a 2009 server</td><td><b>yes</b> — SourceForge’s own file API published <span class="mono">d56d71ec…c042</span> for <span class="mono">bitcoin.pdf</span>, and it matches</td></tr>
     <tr><td>independent custodians holding identical bytes</td><td><b>yes</b> — SourceForge, the Internet Archive, Arquivo.pt, Vefsafn.is, and the block chain</td></tr>
-    <tr><td>forensic examination in a contested court</td><td><b>yes</b> — used as a control copy in COPA v Wright</td></tr>
+    <tr><td>examination by the court's forensic document examiner, tested at trial</td><td><b>yes</b> — used as a control copy in COPA v Wright</td></tr>
     <tr><td>internal evidence bracketing the date</td><td><b>yes</b> — the b-money citation, on both sides</td></tr>
   </table></div>
 
-  <p><b>The canonical whitepaper is among the best-attested documents of its era. It is not, and
-    cannot become, a verified-<i>authored</i> one.</b> Cryptographic proof that
+  <p><b>The canonical whitepaper is among the best-attested documents of its era. It is not a
+    verified-<i>authored</i> one, and the three points above are why no signature would make it so.</b> Cryptographic proof that
     Satoshi wrote a particular file is not something the mathematics can supply.</p>
 </section>
 
@@ -695,7 +692,7 @@ before   9 Nov 2008                                 — lacks a paragraph they h
   <p>You have to say which one, and then the answer is exact.</p>
   <p><b>As “the paper as it stood when it was announced in October 2008”</b> — the 3 October draft is
     about as established as a document gets: byte-identical from two unrelated hosts, its hash in two
-    independent 2015 records, confirmed by a participant from the 2008 thread, a forensic control copy
+    independent 2015 records, confirmed by a participant from the 2008 thread, a control copy
     in the High Court, sharing six byte-identical font programs and its entire toolchain with the
     canonical, and bracketed on both sides by evidence that is not its own metadata.</p>
   <p><b>As “the canonical paper, the one bitcoin.org serves”</b> — that question is now closed. Its
@@ -703,7 +700,7 @@ before   9 Nov 2008                                 — lacks a paragraph they h
     author did not run; and a High Court expert publishes its MD5 and SHA256, both matching the file
     recovered from the chain. Self-claim, server record and adjudicated finding agree completely.
     There is nothing left to establish about it.</p>
-  <p><b>What is not true, and we will not pretend otherwise:</b> no 2008 cryptographic timestamp
+  <p><b>What is not established:</b> no 2008 cryptographic timestamp
     exists for any version. The earliest recorded hash is January 2015. The early-November download
     rests on a pseudonymous party's word — corroborated by content, but not anchored. And it is not
     <i>demonstrated</i> to be the exact bytes behind the 31 October link, only the simplest
@@ -716,7 +713,7 @@ before   9 Nov 2008                                 — lacks a paragraph they h
 
 <footer aria-label="provenance and license">
   <div class="fbrand">◆ The Bitcoin Whitepaper — provenance</div>
-  <p><span class="k">verify</span> &nbsp;whitepaper_from_chain.py · pdf_structure.py · pdf_fonts.py · pdf_text.py</p>
+  <p><span class="k">verify</span> &nbsp;whitepaper_from_chain.py · pdf_structure.py · pdf_fonts.py · pdf_text.py · pdf_text_deep.py · wayback_orig_headers.py · sourceforge_download_stats.py · audit_published_hashes.py</p>
   <p><span class="k">classes</span> &nbsp;proof-of-work &gt; server-recorded &gt; adjudicated &gt; archive-position &gt; self-asserted</p>
   <p><span class="k">sources</span> &nbsp;metzdowd.com pipermail · Internet Archive · SourceForge · the block chain · [2024] EWHC 1198 (Ch)</p>
   <p style="margin-top:12px"><span class="k">related</span> &nbsp;<a href="https://bitcoin-lab.org">Original Bitcoin Laboratory</a> — executable reconstruction of the earliest Bitcoin ·
@@ -736,7 +733,7 @@ before   9 Nov 2008                                 — lacks a paragraph they h
      never more identification. -->
 <script>window.goatcounter = { path: function (p) { return 'bitcoinwhitepaper.online' + p } }</script>
 <script data-goatcounter="https://parthod0x.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-<!-- umami-tracker: self-hosted, first-party, no cookies, no third party -->
+<!-- umami: self-hosted by the laboratory at analytics.bitcoin-lab.org; no cookies, aggregate only -->
 <script defer src="https://analytics.bitcoin-lab.org/script.js" data-website-id="9995ac92-785b-4a6a-893c-902d5f878fd6"></script>
 <script src="analytics.js"></script>
 

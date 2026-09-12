@@ -13,7 +13,7 @@ how to identify any copy from its contents alone, and exactly where proof ends a
 
 | version | status | sha256 |
 |---|---|---|
-| **August 2008** — *Electronic Cash Without a Trusted Third Party* | **lost** | unknown; its link was never archived |
+| **August 2008** — *Electronic Cash Without a Trusted Third Party* | **lost** | unknown; its link was first crawled in 2020, already dead |
 | **3 October 2008** | held | `427c63b364c6db914cf23072a09ffd53ee078397b7c6ab2d604e12865a982faa` |
 | **11 November 2008** | **not held — but now identifiable** | `e6cc7c952c688b234f9872c3e2f50060ae6556fd27925cba503c6460048e50a9` (MD5 `3e5e11e1e3208d2829e887fb1c86bd05`), created `2008-11-11 16:00:34 UTC`, **larger than 182,801 bytes** (≈184,300 — see note) |
 | **24 March 2009** — canonical | held, chain-anchored | `b1674191a88ec5cdd733e4240a81803105dc412d6c6708d53ab94fc248f4f553` |
@@ -54,7 +54,7 @@ confirmed all three are absent:
 ```
 
 **Open any old `bitcoin.pdf`, press Ctrl-F, and search for the first one.** If it is there, you have
-the version nobody has — please open an issue on the repository. The canonical March 2009 text says something close but
+the version in no public hands — please open an issue on the repository. The canonical March 2009 text says something close but
 not the same (*"can also be funded"*, *"if the output value … is less than"*); the October 2008 draft
 has no transaction-fee text at all.
 
@@ -80,12 +80,12 @@ and adjudicated — agree on the same bytes and the same instant, to the second.
 
 ## Identify any copy
 
-Six plain-text tests. **Four come from Satoshi's own words in dated records** rather than from any
-file, which is why they identify even the versions nobody has. **The 11 November column is blank on purpose** — those blanks are exactly what a surfacing copy would fill in.
+Seven plain-text tests. **Four come from Satoshi's own words in dated records** rather than from any
+file, which is why they identify even the versions not in public hands. **The 11 November column is mostly blank on purpose** — the file is in no public hands; its two filled cells come from Appendix PM3.
 
 | test | Aug 2008 (lost) | 3 Oct 2008 | 11 Nov 2008 (not held) | 24 Mar 2009 |
 |---|---|---|---|---|
-| title | *Electronic Cash Without a Trusted Third Party* | *Bitcoin: A Peer-to-Peer…* | unknown | *Bitcoin: A Peer-to-Peer…* |
+| title | *Electronic Cash Without a Trusted Third Party* | *Bitcoin: A Peer-to-Peer…* | *Bitcoin: A Peer-to-Peer…* (PM3) | *Bitcoin: A Peer-to-Peer…* |
 | "Digital signatures …" | **offer** part | **provide** part | unknown | **provide** part |
 | Hashcash reference | **`[5]`** | `[6]` | unknown | `[6]` |
 | b-money citation | **absent** | `[1]` … 1998 | unknown | `[1]` … 1998 |
@@ -108,7 +108,7 @@ python verify/whitepaper_from_chain.py out.pdf     # carve it out of block 23000
 python verify/pdf_structure.py  a.pdf b.pdf        # toolchain and document lineage
 python verify/pdf_fonts.py      a.pdf b.pdf        # embedded font programs — the deepest test
 python verify/pdf_text.py       in.pdf out.txt     # text extraction that works on this file
-python verify/audit_published_hashes.py . --artifacts .   # every hash we publish, checked
+python verify/audit_published_hashes.py . --artifacts /path/to/your/pdfs   # every hash we publish, checked against files you hold
 ```
 
 **`pdf_fonts.py` is the one worth running.** OpenOffice embeds a *subset* of each font containing
