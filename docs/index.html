@@ -562,7 +562,7 @@ before   9 Nov 2008                                 — lacks a paragraph they h
 
     <li><b>Common Crawl's ARC-era digest includes the record separator.</b> Its index reports a
       base32 SHA-1 that is computed over the response body <i>plus</i> a trailing newline, so it
-      <b>does not</b> equal a clean hash of the file. Comparing the two produces a guaranteed
+      <b>does not</b> equal a clean hash of the file. Comparing the two produces a
       mismatch on every record. A 2012 capture of
       <span class="mono">bitcoin.org/bitcoin.pdf</span> carries a digest matching nothing known;
       fetching the record, stripping one byte, and hashing gives
