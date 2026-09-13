@@ -35,7 +35,7 @@ hours. The file itself is not public — but a great deal about it is:
   **provably larger than 182,801 bytes**. Calibrating the remaining tail against the two versions we
   hold (1,505 and 1,565 bytes) puts it at **≈184,306–184,366** — marginally larger than the canonical.
   *The bound is a fact; the estimate is an inference from two data points, and is labelled as one.*
-  Its trailer `/ID` halves are identical, meaning the file was **written once and never re-saved** —
+  Its trailer `/ID` halves are identical, meaning the file was **written once and not re-saved** —
   the same signature the October draft carries.
 - **It carries the transaction-fee text**, in a wording unique to it (PM3 §52), which we verified is
   absent from both versions we hold. Satoshi proposed fees on the list on 9 November 2008; the text
@@ -95,7 +95,7 @@ file, which is why they identify even the versions not in public hands. **The 11
 
 The reference numbering comes from Satoshi's 20 August 2008 email to Adam Back, quoted in
 **COPA v Wright [2024] EWHC 1198 (Ch)** at ¶661, in which they cite their own draft as
-`[5] A. Back, "Hashcash…"` and have never heard of b-money. Back told them about it the next day. If
+`[5] A. Back, "Hashcash…"` and had not heard of b-money. Back told them about it the next day. If
 b-money then went in as `[1]`, Hashcash must shift to `[6]` — **and it does, in both surviving
 files.** A prediction from a court exhibit, confirmed against files from an unrelated source.
 
@@ -176,12 +176,12 @@ Recorded so nobody repeats them:
 
 - **The 31 Oct 2008 bytes** — no capture, download or published hash from 2008. The Internet
   Archive's first capture of `bitcoin.org/bitcoin.pdf` is 2010-07-04; Common Crawl's 2008–2009 crawl
-  ran during the window and never visited the domain.
+  ran during the window and did not visit the domain.
 - **The August draft** — its link has 20 Wayback captures, every one a 404/302/406, earliest 2020.
   No surviving copy is known; the people who received it in 2008 have not produced one, and Hal
   Finney died in August 2014.
 - **The December 2008 SourceForge upload** — replaced 2009-03-24; a Wayback gap for that project from
-  January to September 2009 means its size was never captured.
+  January to September 2009 means its size was not captured.
 - **The cypherpunks cross-post** (1 Nov 2008) — that list node ran 2005–2013 without public archives.
 - **The 11 November file, in eight archives** — Internet Archive (tested on payload bytes, not just
   capture dates), Common Crawl, archive.today, bitcoin.org's own git history, Arquivo.pt, Vefsafn.is,

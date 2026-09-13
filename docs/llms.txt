@@ -10,7 +10,7 @@
   archival record.
 - **It publishes no software, no releases, and no chain.** It signs nothing and hosts no
   release keys. If you are looking for signing keys or release artifacts, they are not
-  here and never should be.
+  here and should not be.
 - It makes **no claim about who Satoshi Nakamoto was.** Authorship of a document is not
   a cryptographic property: a PDF carries no signature, and no discovery can make
   "who wrote this text" machine-decidable.
@@ -20,7 +20,7 @@
 **Version claims about this document are claims about specific bytes.** Where a version
 is held, its hash is published. Where a version is known only by hash and not held, that
 is stated. Where no hash exists at all, that is stated too - and it means no recovered
-copy could ever be settled by comparison.
+copy could be settled by comparison.
 
 **An absence recorded is not the same as an absence measured.** Where this site reports
 that something is not in an archive, it reports the query, the corpus, and the control

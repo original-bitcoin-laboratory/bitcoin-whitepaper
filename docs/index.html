@@ -112,7 +112,7 @@
       <td><b>August 2008</b><br><span class="sm">“Electronic Cash Without a&nbsp;Trusted Third Party”</span></td>
       <td><span class="tag t-gone">lost</span></td>
       <td class="v-gone">Sent as a link to Adam Back on 20 Aug 2008 and Wei Dai on 22 Aug 2008.
-        The filehost died; no archive ever captured it. <b>Its contents are known from Satoshi's own
+        The filehost died; no archive captured it. <b>Its contents are known from Satoshi's own
         emails</b> — see the ladder below.</td>
     </tr>
     <tr>
@@ -168,7 +168,7 @@ the genuine draft     <b>183,697</b>   <b>427c63b3…</b>   D:20081003134958-07'
     <p class="sm">Three independent tells: an added <span class="mono">/ModDate</span> at a
       +10:00 offset; a size <b>closer to the canonical's 184,292</b> than the real draft's, so a
       size check can pass it; and the structural giveaway — a PDF writer sets the two halves of
-      <span class="mono">/ID</span> equal on first save and never again. <b>They are equal in the
+      <span class="mono">/ID</span> equal on first save and not on any later save. <b>They are equal in the
       genuine draft and unequal in the re-save.</b> Its text is the October text (no fee paragraph),
       so only the file differs — but <b>anyone publishing its hash as “the 3 October 2008 whitepaper”
       is publishing the fingerprint of a 2024 file</b>.</p>
@@ -199,7 +199,7 @@ the genuine draft     <b>183,697</b>   <b>427c63b3…</b>   D:20081003134958-07'
     <h3>Where the reference numbers come from</h3>
     <p class="sm">On <b>20 August 2008</b> Satoshi emailed Adam Back to check a citation, quoting their
       own draft: <code>[5] A. Back, "Hashcash — a denial of service counter-measure"</code>. They had
-      never heard of b-money. Back replied the next day pointing them to it, and Satoshi answered:
+      not heard of b-money. Back replied the next day pointing them to it, and Satoshi answered:
       <i>“I wasn't aware of the b-money page… I'll e-mail him to confirm the year of publication so I
       can credit him.”</i></p>
     <p class="sm">If b-money then went in as <code>[1]</code>, every later reference must shift down
@@ -237,7 +237,7 @@ PDF version              %PDF-1.4    %PDF-1.4
 linearized                     no          no
 /ObjStm  (PDF 1.5+)             0           0
 /XRef    (PDF 1.5+)             0           0
-/ID[0] == /ID[1]     never re-saved  never re-saved
+/ID[0] == /ID[1]     not re-saved    not re-saved
 embedded subset fonts           7           7
 pages                           9           <b>8</b></pre>
 
@@ -269,7 +269,7 @@ byte-identical: <b>6 of 7</b></pre>
 
 <section>
   <h2>How the October draft is dated — without trusting the file</h2>
-  <p class="lead">A backdated clock can write any creation date. The dating below never uses one.</p>
+  <p class="lead">A backdated clock can write any creation date. The dating below does not use one.</p>
 
   <div class="card">
     <h3>The early bound — a citation its author did not yet have</h3>
@@ -356,7 +356,7 @@ before   9 Nov 2008                                 — lacks a paragraph they h
           trailer  /ID &lt;693BFE527899A65C197B4CD42561A6C4&gt; &lt;693BFE527899A65C197B4CD42561A6C4&gt;
                    startxref 182801  →  roughly 184,300 bytes</pre>
     <p class="sm">Note the <span class="mono">/ID</span> halves are <b>equal</b> — the mark of a file
-      written once and never re-saved, the same test that exposes the modern re-typesets described
+      written once and not re-saved, the same test that exposes the modern re-typesets described
       above. Madden reports that the <b>first few kilobytes are an identical match to the October
       draft</b>, that all three versions embed the same fonts in the same order, and that he found
       <b>no indication of manipulation</b>.</p>
@@ -411,7 +411,7 @@ before   9 Nov 2008                                 — lacks a paragraph they h
     <tr><td class="mono">2008-11-09</td><td><b>transaction fees proposed</b> — the draft's late bound</td><td><a href="https://www.metzdowd.com/pipermail/cryptography/2008-November/014842.html">msg 014842</a></td></tr>
     <tr><td class="mono"><b>2008-11-11</b></td><td><b>a fourth version is created</b>, 08:00:34 at UTC−08:00 — <b>carrying the new transaction-fee text</b></td><td>Bohm §19 for the file; <b>Appendix PM3 §§42–52</b> for its hashes and its unique text. <b>Still not public</b>; we do not hold it, but it can now be identified on sight</td></tr>
     <tr><td class="mono">2008-11-17</td><td><b>the list moderator ends the discussion</b>, 4h 19m after Satoshi's last post</td><td><a href="https://www.metzdowd.com/pipermail/cryptography/2008-November/">metzdowd archive</a> — <i>“ADMIN: end of bitcoin discussion for now.”</i> The 52-day silence that follows is consistent with <b>a moderated list being moderated</b>; it need not be read as a withdrawal</td></tr>
-    <tr><td class="mono">2008-12-08/09</td><td>the paper uploaded to SourceForge</td><td>¶23.5. <b>That file is not preserved</b> and its size was never captured</td></tr>
+    <tr><td class="mono">2008-12-08/09</td><td>the paper uploaded to SourceForge</td><td>¶23.5. <b>That file is not preserved</b> and its size was not captured</td></tr>
     <tr><td class="mono">2009-01-03</td><td>the genesis block</td><td><b>proof-of-work</b> — the only unforgeable class here</td></tr>
     <tr><td class="mono"><b>2009-01-18</b></td><td><b>a member of the public downloads the paper</b>, 13:27 GMT — and it is the <b>11 November version</b></td><td>Bohm §19. He read the cryptography list, downloaded it, and still had the file in 2023. <b>This is what was on offer to the public in January 2009</b></td></tr>
     <tr><td class="mono">2009-02-01</td><td>Satoshi sends Bohm <b>100 BTC</b> — unprompted, on Bohm's account (§15)</td><td>Bohm §15, under a statement of truth. <b>On-chain, in principle</b> — blocks ≈2406–2600 by date; not identified on-chain by this project</td></tr>
@@ -467,7 +467,7 @@ before   9 Nov 2008                                 — lacks a paragraph they h
     witnesses &mdash; the arrival time rests on the list operator's clock. And none of these clocks
     belongs to a person: <span class="mono">124.217.253.42</span> is a remailer's relay used by every
     customer of that service, so its <span class="mono">+0800</span> offset is a server setting and
-    has never been evidence of anybody's timezone. <b>This dates a document. It identifies nobody.</b></p>
+    is not evidence of anybody's timezone. <b>This dates a document. It identifies nobody.</b></p>
 </section>
 
 <section>
@@ -480,10 +480,10 @@ before   9 Nov 2008                                 — lacks a paragraph they h
       now established against <b>six instruments, not one</b>:
       <div class="tw"><table>
         <tr><th>archive</th><th>earliest record of that URL</th></tr>
-        <tr><td>Internet Archive</td><td><b>2010-07-04</b> — 499 CDX rows; two real payloads ever, neither is the missing file</td></tr>
+        <tr><td>Internet Archive</td><td><b>2010-07-04</b> — 499 CDX rows; two real payloads in total, neither is the missing file</td></tr>
         <tr><td>Common Crawl</td><td><b>none.</b> <span class="mono">CC-MAIN-2008-2009</span> queried by name — zero captures of the host</td></tr>
         <tr><td>archive.today</td><td><b>2016.</b> Its one 2010-dated row is labelled <i>“archived via web.archive.org”</i> — a re-archive of the row above, not an independent capture</td></tr>
-        <tr><td>bitcoin.org's own git</td><td><b>2011-08-31.</b> Two commits ever touch the file; the blob at the first is the canonical, verified by git-blob hash without downloading</td></tr>
+        <tr><td>bitcoin.org's own git</td><td><b>2011-08-31.</b> Two commits touch the file; the blob at the first is the canonical, verified by git-blob hash without downloading</td></tr>
         <tr><td>Arquivo.pt (Portugal)</td><td><b>2014-11-27.</b> Host-wide: zero rows before 2010</td></tr>
         <tr><td>Vefsafn.is (Iceland)</td><td><b>2011-08-04</b></td></tr>
       </table></div>
@@ -517,12 +517,12 @@ before   9 Nov 2008                                 — lacks a paragraph they h
     <li><b>The August 2008 draft.</b> <b>Even a successful capture would not have saved it</b> —
       that URL was a file-host <i>landing page</i>, not the file. Fetching an actually-archived
       neighbouring page from the same host in 2009 shows what such a capture preserves: a filename,
-      a byte size, a download count, and no payload. The archive could only ever have recorded a
+      a byte size, a download count, and no payload. The archive could only have recorded a
       <i>description</i> of the draft. Its link — <span class="mono">upload.ae/file/6157/ecash-pdf.html</span>
       — has 20 Wayback captures, <b>every one a 404, 302 or 406</b>, earliest 2020: already dead when
       first crawled. No surviving copy is known: the people who received it in 2008 have not produced
       one, and Hal Finney died in August 2014.</li>
-    <li><b>The December 2008 SourceForge file.</b> Replaced on 2009-03-24. Its size was never captured
+    <li><b>The December 2008 SourceForge file.</b> Replaced on 2009-03-24. Its size was not captured
       — there is a Wayback gap for that project from January to September 2009, and the file-detail
       page is the only page carrying a size. <b>Not recoverable by machine</b> — and it was downloaded <b>once</b>, see below.</li>
     <li><b>The cypherpunks cross-post.</b> The announcement was forwarded to
@@ -548,7 +548,7 @@ before   9 Nov 2008                                 — lacks a paragraph they h
     <li><b>A wildcard plus a match-type is a literal asterisk.</b> Sending a CDX query both a
       trailing <span class="mono">*</span> and <span class="mono">matchType=prefix</span> makes it
       search for a URL <i>containing</i> an asterisk. It matches nothing and returns an empty list
-      &mdash; <b>indistinguishable from &ldquo;never captured&rdquo;</b>. A sweep of ours reported
+      &mdash; <b>indistinguishable from &ldquo;not captured&rdquo;</b>. A sweep of ours reported
       zero captures for one of the most heavily archived pages on the web until a control pattern
       caught it.</li>
 
@@ -562,7 +562,7 @@ before   9 Nov 2008                                 — lacks a paragraph they h
 
     <li><b>Common Crawl's ARC-era digest includes the record separator.</b> Its index reports a
       base32 SHA-1 that is computed over the response body <i>plus</i> a trailing newline, so it
-      <b>never</b> equals a clean hash of the file. Comparing the two produces a guaranteed
+      <b>does not</b> equal a clean hash of the file. Comparing the two produces a guaranteed
       mismatch on every record. A 2012 capture of
       <span class="mono">bitcoin.org/bitcoin.pdf</span> carries a digest matching nothing known;
       fetching the record, stripping one byte, and hashing gives
@@ -575,7 +575,7 @@ before   9 Nov 2008                                 — lacks a paragraph they h
       Internet Archive snapshot, and its search endpoints answer nothing.</li>
   </ul>
 
-  <p class="sm"><b>A 404 is not always an absence.</b> On Common Crawl's index a 404 means
+  <p class="sm"><b>A 404 is not necessarily an absence.</b> On Common Crawl's index a 404 means
     &ldquo;no rows for that URL&rdquo;, not &ldquo;no index&rdquo; &mdash; the 2008&ndash;2009
     collection answers normally for <span class="mono">google.com</span> and
     <span class="mono">wikipedia.org</span> while returning 404 for
@@ -615,7 +615,7 @@ before   9 Nov 2008                                 — lacks a paragraph they h
     <p class="sm">So the defensible statement is narrow: <b>in December 2008, when it was the only
       file in the project, it was downloaded once.</b> That is worth knowing because it is the
       opposite of what one would assume — and because it means “ask the people who downloaded it from
-      SourceForge” was never a search strategy.</p>
+      SourceForge” was not a search strategy.</p>
   </div>
   <div class="card">
     <h3>But we now know <i>which version</i> was on offer</h3>
@@ -637,7 +637,7 @@ before   9 Nov 2008                                 — lacks a paragraph they h
 </section>
 
 <section>
-  <h2>Can any of this ever prove Satoshi <i>wrote</i> it?</h2>
+  <h2>Can any of this prove Satoshi <i>wrote</i> it?</h2>
   <p class="lead">No. And that is a fact about the evidence, not a gap in the searching — so it is
     worth stating precisely rather than leaving as an impression.</p>
 
@@ -672,7 +672,7 @@ before   9 Nov 2008                                 — lacks a paragraph they h
   </ul>
 
   <p><b>The standards available, and where the canonical file stands against each</b> — near the top of what
-    is achievable rather than short of something that was ever available:</p>
+    is achievable rather than short of something that was available:</p>
   <div class="tw"><table>
     <tr><th>standard</th><th>status</th></tr>
     <tr><td>a signature by a known-Satoshi key</td><td><b>impossible</b> — see above</td></tr>
@@ -730,7 +730,7 @@ before   9 Nov 2008                                 — lacks a paragraph they h
      two do not merge into one indistinguishable row in the dashboard. No cookies and no
      cross-site identifier. Since 10 Aug 2026 analytics.js adds EVENTS on top of the pageview --
      outbound links, downloads, evidence expansion, read depth, copies. More KINDS of event;
-     never more identification. -->
+     not more identification. -->
 <script>window.goatcounter = { path: function (p) { return 'bitcoinwhitepaper.online' + p } }</script>
 <script data-goatcounter="https://parthod0x.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <!-- umami: self-hosted by the laboratory at analytics.bitcoin-lab.org; no cookies, aggregate only -->
