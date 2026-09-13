@@ -38,6 +38,11 @@ from, and how to raise anything with it.
   re-run, not deployed. It handles no money and holds no keys.
 - The licence disclaims warranty for the **code**. This section does the same for the **findings**,
   which no software licence covers.
+- **The project changes; the record does not.** Its scope, methods, tools, documents, sites, nodes and
+  repositories may be extended, restructured, replaced or retired by the author at any time, with no
+  notice owed and no duty to anyone to continue any of them. What has been published stays as
+  published: a signed, sealed or anchored artifact is not edited, and a claim found wrong is
+  superseded by a dated correction beside it.
 
 ## Sourcing
 
@@ -82,7 +87,7 @@ why. Requests are considered promptly and the outcome is recorded openly.
 
 This project publishes its mistakes on purpose. Several published claims here have been wrong and
 were corrected in place, with the error and its cause described rather than quietly edited away —
-because a result is worth what its checking is worth. If you find an error, report it; it will be
+because a result is worth what its checking is worth. If you find an error, report it; it is
 reviewed and, where confirmed, corrected and credited.
 
 ## Licence

@@ -7,7 +7,7 @@
 # The most useful report is therefore: "an artifact you published does not verify."
 # Every hash published here can be re-derived with the scripts in the repository's
 # verify/ directory. If a hash or a stated figure does not reproduce, that is a
-# defect and will be corrected in the open rather than argued about.
+# defect and is corrected in the open rather than argued about.
 
 Contact: mailto:parthms.id@gmail.com
 Expires: 2027-08-11T00:00:00.000Z

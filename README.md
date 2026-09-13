@@ -183,7 +183,7 @@ Recorded so nobody repeats them:
 - **The December 2008 SourceForge upload** — replaced 2009-03-24; a Wayback gap for that project from
   January to September 2009 means its size was not captured.
 - **The cypherpunks cross-post** (1 Nov 2008) — that list node ran 2005–2013 without public archives.
-- **The 11 November file, in eight archives** — Internet Archive (tested on payload bytes, not just
+- **The 11 November file, in six archives and two content searches** — Internet Archive (tested on payload bytes, not just
   capture dates), Common Crawl, archive.today, bitcoin.org's own git history, Arquivo.pt, Vefsafn.is,
   **Software Heritage by content hash**, and **GitHub code search**. Every one controlled: the two
   held versions are found where the target is not. Note that three of these bottom out at the *same*
