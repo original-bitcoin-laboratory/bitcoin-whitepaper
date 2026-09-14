@@ -15,13 +15,13 @@ how to identify any copy from its contents alone, and exactly where proof ends a
 |---|---|---|
 | **August 2008** — *Electronic Cash Without a Trusted Third Party* (the title from the 22 August 2008 email Wei Dai published (mirrored at gwern.net/doc/bitcoin/2008-nakamoto)) | **lost** | unknown; its link was first crawled in 2020, already dead |
 | **3 October 2008** | held | `427c63b364c6db914cf23072a09ffd53ee078397b7c6ab2d604e12865a982faa` |
-| **a January 2009 download** — in the court record | **not held** | no public hash; authenticated by the court's expert and used as a control copy (judgment ¶271.9). Its date, hashes and text are in evidence that is not published and are not reproduced here |
+| **a January 2009 download** — in the court record | **not held** | no public hash; authenticated in evidence (¶271.9) and used as a control copy. Its date, hashes and text are in evidence that is not published and are not reproduced here |
 | **24 March 2009** — canonical | held, chain-anchored | `b1674191a88ec5cdd733e4240a81803105dc412d6c6708d53ab94fc248f4f553` |
 
 The fourth version is in the court record and in no public hands. The judgment in **COPA v Wright
 [2024] EWHC 1198 (Ch)** records (¶271.9) that Nicholas Bohm, a retired solicitor who corresponded with
 Satoshi shortly after the January 2009 release, provided a version of the whitepaper he had downloaded
-in January 2009, which the court's expert authenticated and which was used in the evidence as a
+in January 2009, which an expert witness (Mr Madden, ¶271.9) authenticated and which was used in the evidence as a
 control copy. That is what the public record states about it, and it is what this project states.
 Its creation date, hashes, size and text are in evidence that is not published; this project does not
 reproduce them, so whether it carries the Section 6 fee paragraph — which would date that addition
@@ -185,7 +185,7 @@ that material was removed, and the page now states only what the judgment record
 
 Three domains, three remits: **the code**, **the footprint**, **the document**.
 
-MIT © 2026 [parthod0x](https://github.com/parthod0x) · not money, not financial advice · no warranty
+MIT © 2026 [parthod0x](https://github.com/parthod0x) (new project material; historical artifacts retain their original notices and licences) · not money, not financial advice · no warranty
 
 ---
 
