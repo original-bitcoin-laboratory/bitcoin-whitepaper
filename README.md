@@ -13,65 +13,39 @@ how to identify any copy from its contents alone, and exactly where proof ends a
 
 | version | status | sha256 |
 |---|---|---|
-| **August 2008** — *Electronic Cash Without a Trusted Third Party* | **lost** | unknown; its link was first crawled in 2020, already dead |
+| **August 2008** — *Electronic Cash Without a Trusted Third Party* (the title from the 22 August 2008 email Wei Dai published (mirrored at gwern.net/doc/bitcoin/2008-nakamoto)) | **lost** | unknown; its link was first crawled in 2020, already dead |
 | **3 October 2008** | held | `427c63b364c6db914cf23072a09ffd53ee078397b7c6ab2d604e12865a982faa` |
-| **11 November 2008** | **not held — but now identifiable** | `e6cc7c952c688b234f9872c3e2f50060ae6556fd27925cba503c6460048e50a9` (MD5 `3e5e11e1e3208d2829e887fb1c86bd05`), created `2008-11-11 16:00:34 UTC`, **larger than 182,801 bytes** (≈184,300 — see note) |
+| **a January 2009 download** — in the court record | **not held** | no public hash; authenticated by the court's expert and used as a control copy (judgment ¶271.9). Its date, hashes and text are in evidence that is not published and are not reproduced here |
 | **24 March 2009** — canonical | held, chain-anchored | `b1674191a88ec5cdd733e4240a81803105dc412d6c6708d53ab94fc248f4f553` |
 
-The **11 November 2008** version is dated two days after Satoshi proposed transaction fees on the
-mailing list. Whether it carries the Section 6 fee paragraph would date that addition to within 48
-hours. The file itself is not public — but a great deal about it is:
+The fourth version is in the court record and in no public hands. The judgment in **COPA v Wright
+[2024] EWHC 1198 (Ch)** records (¶271.9) that Nicholas Bohm, a retired solicitor who corresponded with
+Satoshi shortly after the January 2009 release, provided a version of the whitepaper he had downloaded
+in January 2009, which the court's expert authenticated and which was used in the evidence as a
+control copy. That is what the public record states about it, and it is what this project states.
+Its creation date, hashes, size and text are in evidence that is not published; this project does not
+reproduce them, so whether it carries the Section 6 fee paragraph — which would date that addition
+against Satoshi's 9 November 2008 fee proposal on the mailing list — is an open question here.
 
-- **It was the version the public could download in January 2009.** Nicholas Bohm, a retired
-  solicitor who read the cryptography mailing list, downloaded it on **18 January 2009 at 13:27 GMT**
-  and still had it in 2023. His witness statement (§19) reports its creation stamp as
-  **11 November 2008, 08:00:34 at UTC−08:00**.
-- **Patrick Madden analysed it** at Appendix PM3 §§41–73 and considers it *"very likely to be an
-  authentic intermediate draft"* between the October 2008 and March 2009 versions.
-- **Its hashes are now known**, from Appendix PM3 §42 — so a candidate copy can be verified in one
-  command, even though the file is in no public hands.
-- **Its size is bounded, not measured.** No source states a byte count, but PM3 quotes the file's
-  trailer, which ends `startxref 182801` — the offset of its cross-reference table. So the file is
-  **provably larger than 182,801 bytes**. Calibrating the remaining tail against the two versions we
-  hold (1,505 and 1,565 bytes) puts it at **≈184,306–184,366** — marginally larger than the canonical.
-  *The bound is a fact; the estimate is an inference from two data points, and is labelled as one.*
-  Its trailer `/ID` halves are identical, meaning the file was **written once and not re-saved** —
-  the same signature the October draft carries.
-- **It carries the transaction-fee text**, in a wording unique to it (PM3 §52), which we verified is
-  absent from both versions we hold. Satoshi proposed fees on the list on 9 November 2008; the text
-  was in the paper **two days later**, and was reworded again for March 2009.
+### If you have an old copy
 
-### If you have an old copy, you can check it by reading — no hashing required
-
-Madden's Appendix PM3 §52 identifies three sentences that appear in the 11 November file and in
-**neither** of the two versions that survive in public. We searched both held files directly and
-confirmed all three are absent:
-
-```
-"The incentive is also funded with transaction fees"
-"The output value of every transaction is equal to the input value minus a transaction fee"
-"and the incentive is increased by the total transaction fees in the block"
-```
-
-**Open any old `bitcoin.pdf`, press Ctrl-F, and search for the first one.** If it is there, you have
-the version in no public hands — please open an issue on the repository. The canonical March 2009 text says something close but
-not the same (*"can also be funded"*, *"if the output value … is less than"*); the October 2008 draft
-has no transaction-fee text at all.
-
-**These sentences matter more than the hashes.** A hash matches only one exact file and no search
-engine indexes it. A sentence survives quotation, re-typing, and a paste into an old email — so it is
-worth searching your mail, not just your disk.
+Hash it and compare against the two held versions above. A copy that matches neither is worth
+reporting — please open an issue on the repository — because a third version is known to exist and is
+in no public hands.
 
 ### The canonical file's identity is closed
 
-Madden's First Expert Report §180 publishes the hashes of the court's own control copy (ID_000865):
+The file recovered from the block chain hashes to:
 
 ```
 MD5:    d56d71ecadf2137be09d8b1d35c6c042
 SHA256: b1674191a88ec5cdd733e4240a81803105dc412d6c6708d53ab94fc248f4f553
 ```
 
-Both match the file recovered from the block chain. Together with
+The judgment records (¶320) that the court's own control copy, ID_000865, bears a creation date of
+24 March 2009 and is hash-identical to a `Bitcoin.pdf` captured from the SourceForge project by a web
+archive on 28 November 2009 — a capture anyone can download, and which hashes to the value above.
+Together with
 `X-Archive-Orig-Last-Modified: Tue, 24 Mar 2009 17:33:15 GMT` from bitcoin.org's own filesystem and
 the PDF's own `/CreationDate`, three independent classes of evidence — self-asserted, server-recorded
 and adjudicated — agree on the same bytes and the same instant, to the second.
@@ -80,24 +54,26 @@ and adjudicated — agree on the same bytes and the same instant, to the second.
 
 ## Identify any copy
 
-Seven plain-text tests. **Four come from Satoshi's own words in dated records** rather than from any
-file, which is why they identify even the versions not in public hands. **The 11 November column is mostly blank on purpose** — the file is in no public hands; its two filled cells come from Appendix PM3.
+Seven plain-text tests. **Four come from Satoshi's own words in dated records** — the 20 August 2008
+email the judgment quotes (¶661) and the 22 August 2008 email Wei Dai published (mirrored at gwern.net/doc/bitcoin/2008-nakamoto) — rather than from any file, which is why they identify even the lost draft.
+**The court-record column is blank on purpose** — the file is in no public hands, and what is in
+evidence about it is not published.
 
-| test | Aug 2008 (lost) | 3 Oct 2008 | 11 Nov 2008 (not held) | 24 Mar 2009 |
+| test | Aug 2008 (lost) | 3 Oct 2008 | Jan 2009 download (court record) | 24 Mar 2009 |
 |---|---|---|---|---|
-| title | *Electronic Cash Without a Trusted Third Party* | *Bitcoin: A Peer-to-Peer…* | *Bitcoin: A Peer-to-Peer…* (PM3) | *Bitcoin: A Peer-to-Peer…* |
+| title | *Electronic Cash Without a Trusted Third Party* | *Bitcoin: A Peer-to-Peer…* | unknown | *Bitcoin: A Peer-to-Peer…* |
 | "Digital signatures …" | **offer** part | **provide** part | unknown | **provide** part |
 | Hashcash reference | **`[5]`** | `[6]` | unknown | `[6]` |
 | b-money citation | **absent** | `[1]` … 1998 | unknown | `[1]` … 1998 |
 | "the burdens of" | yes | yes | unknown | no |
-| Section 6 transaction fees | absent | **absent** | **present — first wording** | present, reworded |
+| Section 6 transaction fees | unknown | **absent** | unknown | present, reworded |
 | contact address | — | `satoshi@vistomail.com` | unknown | `satoshin@gmx.com` |
 
 The reference numbering comes from Satoshi's 20 August 2008 email to Adam Back, quoted in
 **COPA v Wright [2024] EWHC 1198 (Ch)** at ¶661, in which they cite their own draft as
 `[5] A. Back, "Hashcash…"` and had not heard of b-money. Back told them about it the next day. If
 b-money then went in as `[1]`, Hashcash must shift to `[6]` — **and it does, in both surviving
-files.** A prediction from a court exhibit, confirmed against files from an unrelated source.
+files.** A prediction from the judgment's quotation of the email, confirmed against files from an unrelated source.
 
 ## Verify
 
@@ -183,21 +159,20 @@ Recorded so nobody repeats them:
 - **The December 2008 SourceForge upload** — replaced 2009-03-24; a Wayback gap for that project from
   January to September 2009 means its size was not captured.
 - **The cypherpunks cross-post** (1 Nov 2008) — that list node ran 2005–2013 without public archives.
-- **The 11 November file, in six archives and two content searches** — Internet Archive (tested on payload bytes, not just
+- **A third whitepaper file, in six archives and two content searches** — Internet Archive (tested on payload bytes, not just
   capture dates), Common Crawl, archive.today, bitcoin.org's own git history, Arquivo.pt, Vefsafn.is,
   **Software Heritage by content hash**, and **GitHub code search**. Every one controlled: the two
-  held versions are found where the target is not. Note that three of these bottom out at the *same*
+  held versions are found, and nothing else is. Note that three of these bottom out at the *same*
   July 2010 Wayback capture — archive.today's apparently independent 2010 row is labelled
   `archived via web.archive.org`. **When two archives agree on the earliest date, check whether one is
   quoting the other.**
 
-**Corrected — this list used to say the COPA expert reports were "not published".** The six
-expert reports of Patrick Madden are publicly available at
-[bitcoindefense.org](https://bitcoindefense.org). His appendices, including PM3, are not published
-there; the hashes and text tests above come from a copy of the trial bundle that has circulated publicly; this project does not re-host or link it, and checked before relying on it that its embedded identifiers for the two files we hold match byte-for-byte. **And Madden ran this search too**: at Appendix PM3 §§53–56 he records that the disclosure
-dataset, Google, and the Internet Archive's holdings of bitcoin.org produced no other instance of the
-11 November document — an independent negative, given under a duty to the court, that agrees with
-ours.
+**Court material.** This project cites the published judgment, *COPA v Wright* [2024] EWHC 1198 (Ch),
+by paragraph, and nothing else from the proceedings: the expert appendices and witness statements the
+judgment refers to are not published by the court or the parties, and this project does not
+reproduce, re-host or rely on copies of them in circulation. Until 14 September 2026 this page relied
+on one such appendix for the fourth version's hashes, creation time and three sentences of its text;
+that material was removed, and the page now states only what the judgment records.
 
 ---
 

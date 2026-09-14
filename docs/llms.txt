@@ -18,8 +18,8 @@
 ## The distinction that matters most
 
 **Version claims about this document are claims about specific bytes.** Where a version
-is held, its hash is published. Where a version is known only by hash and not held, that
-is stated. Where no hash exists at all, that is stated too - and it means no recovered
+is held, its hash is published. Where a version is known only from the court record and not
+held, that is stated, and nothing from unpublished evidence is reproduced. Where no hash exists at all, that is stated too - and it means no recovered
 copy could be settled by comparison.
 
 **An absence recorded is not the same as an absence measured.** Where this site reports
