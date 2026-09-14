@@ -34,20 +34,20 @@
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;
     -webkit-font-smoothing:antialiased}
-  .wrap{max-width:860px;margin:0 auto;padding:clamp(30px,6vw,76px) clamp(18px,5vw,34px) 90px}
+  .wrap{max-width:860px;margin:0 auto;padding:clamp(30px,6vw,76px) clamp(20px,5vw,40px) 90px}
   .mono{font-family:var(--mono);font-size:.92em;overflow-wrap:anywhere}
   .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.15em;text-transform:uppercase;
     color:var(--accent);margin:0 0 16px}
   h1{font-family:var(--serif);font-size:clamp(31px,5.6vw,50px);line-height:1.06;letter-spacing:-.02em;
     font-weight:600;margin:0 0 18px;text-wrap:balance}
-  .thesis{font-size:clamp(16px,2.1vw,18.5px);color:var(--muted);margin:0 0 12px;max-width:62ch}
+  .thesis{font-size:clamp(16px,2.1vw,18.5px);color:var(--muted);margin:0 0 12px}
   .thesis b{color:var(--ink);font-weight:600}
   h2{font-family:var(--serif);font-size:clamp(21px,3vw,27px);font-weight:600;letter-spacing:-.01em;
     margin:56px 0 6px;padding-top:22px;border-top:1px solid var(--line)}
   h3{font-size:15.5px;font-weight:650;margin:26px 0 6px;color:var(--ink)}
-  p{margin:0 0 13px;max-width:70ch}
-  .lead{color:var(--muted);margin-bottom:20px;max-width:66ch}
-  .sm{font-size:14px;color:var(--muted);max-width:70ch}
+  p{margin:0 0 13px}
+  .lead{color:var(--muted);margin-bottom:20px}
+  .sm{font-size:14px;color:var(--muted)}
   a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--line-2)}
   a:hover{border-color:var(--accent)}
   code{font-family:var(--mono);font-size:.88em;background:var(--accent-soft);padding:1px 5px;
@@ -60,7 +60,19 @@
   table{border-collapse:collapse;width:100%;font-size:14px}
   /* Only tables that genuinely need the width opt in. A blanket min-width stretched the
      two-column tables into whitespace and made every table scroll on a phone. */
-  .tw.wide table{min-width:680px}
+  .tw table{min-width:560px}
+  .tw.wide table{min-width:720px}
+  td.mono{white-space:nowrap}
+  /* The court-record header is the widest thing in its column; let the wide table's headers wrap
+     so a nowrap heading cannot squeeze the email cells beside it. */
+  .tw.wide th{white-space:normal}
+  /* Four-versions table: status shrinks to its chip, the version column keeps room for a date. */
+  .tw.versions th:nth-child(2),.tw.versions td:nth-child(2){width:1%;white-space:nowrap}
+  .tw.versions th:first-child,.tw.versions td:first-child{min-width:150px}
+  @media (max-width:560px){
+    .tw::after{content:"scroll sideways \2192";display:block;font-family:var(--mono);font-size:11px;
+      letter-spacing:.06em;color:var(--faint);padding:6px 13px 2px;border-top:1px solid var(--line)}
+  }
   th,td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--line);vertical-align:top}
   th{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
     color:var(--faint);font-weight:600;white-space:nowrap}
@@ -75,11 +87,11 @@
     padding:18px 20px;margin:18px 0}
   .card h3{margin-top:0}
   .quote{border-left:2px solid var(--accent);padding:3px 0 3px 18px;margin:16px 0;
-    font-family:var(--serif);font-size:16px;color:var(--muted);max-width:64ch}
+    font-family:var(--serif);font-size:16px;color:var(--muted)}
   .quote cite{display:block;margin-top:8px;font-family:var(--mono);font-size:11.5px;
     font-style:normal;color:var(--faint)}
   .neg{color:var(--gone)}
-  ul{margin:0 0 13px;padding-left:20px;max-width:70ch} li{margin-bottom:6px}
+  ul{margin:0 0 13px;padding-left:20px} li{margin-bottom:6px}
   footer{margin-top:74px;padding-top:24px;border-top:1px solid var(--line);
     font-family:var(--mono);font-size:12.5px;line-height:1.85;color:var(--faint)}
   footer a{color:var(--faint);border-bottom:1px solid var(--line)}
@@ -106,7 +118,7 @@
 <section>
   <h2>The four known versions</h2>
   <p class="lead">Dates are the files' own where we hold them; the evidence below does not depend on them.</p>
-  <div class="tw"><table>
+  <div class="tw versions"><table>
     <tr><th>version</th><th>status</th><th>identity</th></tr>
     <tr>
       <td><b>August 2008</b><br><span class="sm">“Electronic Cash Without a&nbsp;Trusted Third Party”</span></td>
