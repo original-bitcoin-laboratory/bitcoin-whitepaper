@@ -81,6 +81,7 @@ Python 3, standard library only. No API key, no login, no node.
 
 ```bash
 python verify/whitepaper_from_chain.py out.pdf     # carve it out of block 230009 and re-hash
+python verify/whitepaper_from_chain_2026.py out.pdf  # the 2026 re-inscription: strip one line, get the canonical back
 python verify/pdf_structure.py  a.pdf b.pdf        # toolchain and document lineage
 python verify/pdf_fonts.py      a.pdf b.pdf        # embedded font programs — the deepest test
 python verify/pdf_text.py       in.pdf out.txt     # text extraction that works on this file

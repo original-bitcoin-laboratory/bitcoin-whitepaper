@@ -84,7 +84,10 @@ print(f"  no local artifact to check against : {len(unknown)}")
 near = []
 for h in unknown:
     for r in real:
-        n = len(os.path.commonprefix([h, r]))
+        p = os.path.commonprefix([h, r])
+        # Leading zeros are proof-of-work, not resemblance: a block or ground txid and a ground-hashed
+        # file share them by construction. Count only what is shared after the zeros.
+        n = len(p.lstrip("0"))
         if n >= 8:
             near.append((n, h, r, published[h], real[r]))
 near.sort(reverse=True)

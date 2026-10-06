@@ -218,6 +218,14 @@ the genuine draft     <b>183,697</b>   <b>427c63b3…</b>   D:20081003134958-07'
       — the title from the email Wei Dai published, the citations from the judgment (¶661, ¶663). The file
       circulating under that name fails this — and also fails on structure, being PDF 1.6 and
       linearized, which OpenOffice 2.4 does not produce.</p>
+    <p class="sm">Reference <code>[1]</code> points at <code>http://www.weidai.com/bmoney.txt</code>.
+      The Internet Archive holds seven captures of that address from December 2006 to August 2009, all
+      with <b>one</b> payload digest (<span class="mono">TTETUXZS…</span>, recomputed from the
+      downloaded bytes). That file carries <i>“Appendix A: alternative b-money creation”</i>, the
+      December 1998 revision in which money is created by an auction, after the observation that
+      computing <i>“technology tends to advance rapidly and not always publicly”</i>. So the cited page
+      held the appendix throughout 2008. That shows what the citation pointed to, not that it was read
+      to the end; the whitepaper does not mention an auction.</p>
   </div>
 </section>
 
@@ -237,6 +245,14 @@ sha256  <b>b1674191a88ec5cdd733e4240a81803105dc412d6c6708d53ab94fc248f4f553</b> 
   <p class="sm"><b>Proof-of-work cannot be backdated.</b> This pins the canonical text to April 2013
     independently of bitcoin.org, of the Internet Archive, and of us. It says <b>nothing</b> about
     2008 and is not offered as if it did.</p>
+  <p class="sm"><b>The same text was put on chain again in May 2026</b>, in transaction
+    <a href="https://blockstream.info/tx/00000000000ad99639585eb5fb0dc0bb093575719ecd78cfede972637b65de07"><span class="mono">00000000000ad996…</span></a>
+    (block 949,973), as one data push of 184,303 bytes. That is the canonical file with one 11-byte PDF
+    comment line inserted before <code>%%EOF</code>, which readers ignore and which grinds the file's
+    own SHA-256 to <span class="mono">0000000000003c22…</span>. The script removes the line and gets
+    <span class="mono">b1674191…</span> back exactly: the same paper, re-anchored, not a fifth version.
+    It is later than 2013, so it adds nothing to dating, and the transaction does not say who made it.</p>
+<pre>python verify/whitepaper_from_chain_2026.py out-2026.pdf</pre>
 
   <h3>2 · Compare the two surviving files structurally</h3>
 <pre>python verify/pdf_structure.py canonical.pdf draft.pdf
